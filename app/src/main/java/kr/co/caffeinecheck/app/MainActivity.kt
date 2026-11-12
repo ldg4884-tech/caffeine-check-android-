@@ -20,10 +20,10 @@ import androidx.compose.ui.unit.sp
 import org.json.JSONArray
 import org.json.JSONObject
 
-private val Navy = Color(0xFF142A3A)
-private val Teal = Color(0xFF35B8A5)
-private val Pale = Color(0xFFF3F7F7)
-private val Ink = Color(0xFF203440)
+private val Navy = Color(0xFF071923)
+private val Teal = Color(0xFF43D6C2)
+private val Pale = Color(0xFF071923)
+private val Ink = Color(0xFFF1FAFA)
 
 data class Drink(val name: String, val brand: String, val kind: String, val caffeine: Int?, val sugar: Double?, val kcal: Int?)
 
@@ -58,9 +58,9 @@ fun CaffeineApp(context: Context) {
         (it.name.contains(query, true) || it.brand.contains(query, true)) &&
             (!zeroOnly || it.caffeine == 0)
     }
-    val todayTotal = consumed.sumOf { it.optInt("caffeine", 0) }
+    val todayRecords = consumed.filter { dateKey(it.optLong("time", 0L)) == dateKey(System.currentTimeMillis()) }\n    val todayTotal = todayRecords.filter { it.optBoolean("known", false) && it.optBoolean("verified", false) }.sumOf { it.optInt("caffeine", 0) }\n    val unknownToday = todayRecords.count { !it.optBoolean("known", false) || !it.optBoolean("verified", false) }
 
-    MaterialTheme(colorScheme = lightColorScheme(primary = Teal, background = Pale, surface = Color.White)) {
+    MaterialTheme(colorScheme = darkColorScheme(primary = Teal, background = Pale, surface = Color(0xFF102B38), onSurface = Color(0xFFF1FAFA))) {
         Scaffold(
             containerColor = Pale,
             topBar = {
@@ -75,7 +75,7 @@ fun CaffeineApp(context: Context) {
                 )
             },
             bottomBar = {
-                NavigationBar(containerColor = Color.White) {
+                NavigationBar(containerColor = Color(0xFF102B38)) {
                     NavigationBarItem(selected = selectedTab == 0, onClick = { selectedTab = 0 }, icon = {}, label = { Text("음료 찾기") })
                     NavigationBarItem(selected = selectedTab == 1, onClick = { selectedTab = 1 }, icon = {}, label = { Text("오늘 기록") })
                 }
@@ -95,9 +95,9 @@ fun CaffeineApp(context: Context) {
                                     Text("$todayTotal", color = Color.White, fontSize = 34.sp, fontWeight = FontWeight.Bold)
                                     Text(" mg", color = Color.White, modifier = Modifier.padding(bottom = 6.dp))
                                     Spacer(Modifier.weight(1f))
-                                    Text("참고선 200mg", color = Color(0xFF8DE0D1), fontSize = 12.sp)
+                                    Text("참고선 200mg", color = Color(0xFF43D6C2), fontSize = 12.sp)
                                 }
-                                Text("임신 중 카페인 섭취 참고 기준이며 개인별 의료 지침을 우선하세요.", color = Color(0xFFBBD0D5), fontSize = 11.sp)
+                                Text("임신 중 카페인 참고 기준이며 개인별 의료진 안내를 우선하세요. 확인 필요 $unknownToday건", color = Color(0xFFA5BEC5), fontSize = 11.sp)
                             }
                         }
                     }
@@ -141,7 +141,7 @@ fun CaffeineApp(context: Context) {
                         Text("합계 $todayTotal mg", fontSize = 28.sp, color = Teal, fontWeight = FontWeight.Bold)
                     }
                     items(consumed.reversed()) { record ->
-                        Card(colors = CardDefaults.cardColors(containerColor = Color.White)) {
+                        Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF102B38))) {
                             Row(Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
                                 Column(Modifier.weight(1f)) {
                                     Text(record.optString("brand") + " · " + record.optString("name"), fontWeight = FontWeight.SemiBold)
@@ -163,7 +163,7 @@ fun CaffeineApp(context: Context) {
 
 @Composable
 private fun DrinkCard(drink: Drink, onAdd: () -> Unit) {
-    Card(colors = CardDefaults.cardColors(containerColor = Color.White), shape = RoundedCornerShape(18.dp)) {
+    Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF102B38)), shape = RoundedCornerShape(18.dp)) {
         Column(Modifier.fillMaxWidth().padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(Modifier.weight(1f)) {
@@ -183,7 +183,7 @@ private fun DrinkCard(drink: Drink, onAdd: () -> Unit) {
     }
 }
 
-private fun loadRecords(prefs: android.content.SharedPreferences): List<JSONObject> {
+private fun dateKey(time: Long): String = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.KOREA).format(java.util.Date(time))\n\nprivate fun loadRecords(prefs: android.content.SharedPreferences): List<JSONObject> {
     val array = JSONArray(prefs.getString("records", "[]"))
     return (0 until array.length()).map { array.getJSONObject(it) }
 }
