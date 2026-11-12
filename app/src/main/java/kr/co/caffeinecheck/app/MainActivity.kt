@@ -51,12 +51,20 @@ fun CaffeineApp(context: Context) {
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
     var query by remember { mutableStateOf("") }
-    var zeroOnly by remember { mutableStateOf(false) }
+    var caffeineFilter by remember { mutableStateOf("전체") }
+    var selectedBrand by remember { mutableStateOf("전체") }
+    var favorites by remember { mutableStateOf(prefs.getStringSet("favorites", emptySet())?.toSet() ?: emptySet()) }
     var selectedTab by remember { mutableIntStateOf(0) }
     var consumed by remember { mutableStateOf(loadRecords(prefs)) }
+    val brands = listOf("전체") + drinks.map { it.brand }.distinct()
     val filtered = drinks.filter {
         (it.name.contains(query, true) || it.brand.contains(query, true)) &&
-            (!zeroOnly || it.caffeine == 0)
+            (selectedBrand == "전체" || it.brand == selectedBrand) &&
+            when (caffeineFilter) {
+                "0mg" -> it.caffeine == 0
+                "저카페인" -> it.caffeine != null && it.caffeine in 1..100
+                else -> true
+            }
     }
     val todayRecords = consumed.filter { dateKey(it.optLong("time", 0L)) == dateKey(System.currentTimeMillis()) }
     val todayTotal = todayRecords.filter { it.optBoolean("known", false) && it.optBoolean("verified", false) }.sumOf { it.optInt("caffeine", 0) }
@@ -79,7 +87,8 @@ fun CaffeineApp(context: Context) {
             bottomBar = {
                 NavigationBar(containerColor = Color(0xFF102B38)) {
                     NavigationBarItem(selected = selectedTab == 0, onClick = { selectedTab = 0 }, icon = {}, label = { Text("음료 찾기") })
-                    NavigationBarItem(selected = selectedTab == 1, onClick = { selectedTab = 1 }, icon = {}, label = { Text("오늘 기록") })
+                    NavigationBarItem(selected = selectedTab == 1, onClick = { selectedTab = 1 }, icon = {}, label = { Text("섭취 기록") })
+                    NavigationBarItem(selected = selectedTab == 2, onClick = { selectedTab = 2 }, icon = {}, label = { Text("즐겨찾기") })
                 }
             }
         ) { padding ->
@@ -113,13 +122,23 @@ fun CaffeineApp(context: Context) {
                         )
                     }
                     item {
-                        FilterChip(
-                            selected = zeroOnly, onClick = { zeroOnly = !zeroOnly },
-                            label = { Text("카페인 0mg만 보기") }
-                        )
+                        Text("카페인 필터", color = Color(0xFFBBD0D5), fontSize = 12.sp)
+                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            listOf("전체", "0mg", "저카페인").forEach { option ->
+                                FilterChip(selected = caffeineFilter == option, onClick = { caffeineFilter = option }, label = { Text(option) })
+                            }
+                        }
+                    }
+                    item {
+                        Text("브랜드", color = Color(0xFFBBD0D5), fontSize = 12.sp)
+                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            brands.forEach { brand ->
+                                FilterChip(selected = selectedBrand == brand, onClick = { selectedBrand = brand }, label = { Text(brand) })
+                            }
+                        }
                     }
                     items(filtered) { drink ->
-                        DrinkCard(drink) {
+                        DrinkCard(drink, drink.name in favorites, {
                             val record = JSONObject().apply {
                                 put("name", drink.name)
                                 put("brand", drink.brand)
@@ -130,10 +149,15 @@ fun CaffeineApp(context: Context) {
                             }
                             consumed = consumed + record
                             saveRecords(prefs, consumed)
-                        }
+                        }, {
+                            favorites = if (drink.name in favorites) favorites - drink.name else favorites + drink.name
+                            prefs.edit().putStringSet("favorites", favorites).apply()
+                        })
                     }
+                    if (filtered.isEmpty()) item { Text("검색 결과가 없어요.", color = Color.Gray) }
+                    item { Text("※ 메뉴 수치는 테스트용 예시이며 공식 확인값이 아닙니다. 미확인 값은 합계에서 제외합니다.", color = Color(0xFF91AAB2), fontSize = 11.sp) }
                 }
-            } else {
+            } else if (selectedTab == 1) {
                 LazyColumn(
                     modifier = Modifier.fillMaxSize().padding(padding).padding(18.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp)
@@ -159,13 +183,32 @@ fun CaffeineApp(context: Context) {
                     }
                     if (consumed.isEmpty()) item { Text("아직 기록이 없어요. 음료를 선택해 기록해 보세요.", color = Color.Gray) }
                 }
+            } else {
+                LazyColumn(modifier = Modifier.fillMaxSize().padding(padding).padding(18.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    item { Text("즐겨찾기", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Ink) }
+                    items(drinks.filter { it.name in favorites }) { drink ->
+                        DrinkCard(drink, true, {
+                            val record = JSONObject().apply {
+                                put("name", drink.name); put("brand", drink.brand)
+                                put("caffeine", drink.caffeine ?: 0); put("known", drink.caffeine != null)
+                                put("verified", false); put("time", System.currentTimeMillis())
+                            }
+                            consumed = consumed + record
+                            saveRecords(prefs, consumed)
+                        }, {
+                            favorites = favorites - drink.name
+                            prefs.edit().putStringSet("favorites", favorites).apply()
+                        })
+                    }
+                    if (favorites.isEmpty()) item { Text("음료 카드의 ☆ 저장을 눌러 추가하세요.", color = Color.Gray) }
+                }
             }
         }
     }
 }
 
 @Composable
-private fun DrinkCard(drink: Drink, onAdd: () -> Unit) {
+private fun DrinkCard(drink: Drink, isFavorite: Boolean, onAdd: () -> Unit, onFavorite: () -> Unit) {
     Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF102B38)), shape = RoundedCornerShape(18.dp)) {
         Column(Modifier.fillMaxWidth().padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -174,8 +217,11 @@ private fun DrinkCard(drink: Drink, onAdd: () -> Unit) {
                     Text(drink.name, fontSize = 17.sp, color = Ink, fontWeight = FontWeight.Bold)
                     Text(drink.kind, fontSize = 11.sp, color = Color.Gray)
                 }
-                Text(if (drink.caffeine == null) "미확인" else "${drink.caffeine} mg",
-                    color = if (drink.caffeine == 0) Teal else Ink, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                Column(horizontalAlignment = Alignment.End) {
+                    Text(if (drink.caffeine == null) "미확인" else "${drink.caffeine} mg",
+                        color = if (drink.caffeine == 0) Teal else Ink, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                    TextButton(onClick = onFavorite) { Text(if (isFavorite) "★ 저장됨" else "☆ 저장", color = Teal) }
+                }
             }
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text("열량 ${drink.kcal?.let { "${it}kcal" } ?: "미확인"}  ·  당류 ${drink.sugar?.let { "${it}g" } ?: "미확인"}",
