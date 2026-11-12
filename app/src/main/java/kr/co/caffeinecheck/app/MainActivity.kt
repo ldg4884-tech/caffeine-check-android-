@@ -73,7 +73,7 @@ fun CaffeineApp(context: Context) {
         (it.name.contains(query, true) || it.brand.contains(query, true)) &&
             (selectedBrand == "전체" || it.brand == selectedBrand) &&
             when (caffeineFilter) {
-                "0mg" -> it.caffeine == 0
+                "100mg 이하" -> it.caffeine != null && it.caffeine <= 100
                 "저카페인" -> it.caffeine != null && it.caffeine in 1..100
                 else -> true
             }
@@ -136,7 +136,7 @@ fun CaffeineApp(context: Context) {
                     item {
                         Text("카페인 필터", color = Color(0xFFBBD0D5), fontSize = 12.sp)
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            listOf("전체", "0mg", "저카페인").forEach { option ->
+                            listOf("전체", "100mg 이하").forEach { option ->
                                 FilterChip(selected = caffeineFilter == option, onClick = { caffeineFilter = option }, label = { Text(option) })
                             }
                         }
@@ -208,7 +208,7 @@ fun CaffeineApp(context: Context) {
                             val record = JSONObject().apply {
                                 put("name", drink.name); put("brand", drink.brand)
                                 put("caffeine", drink.caffeine ?: 0); put("known", drink.caffeine != null)
-                                put("verified", false); put("time", System.currentTimeMillis())
+                                put("verified", drink.caffeine != null); put("source", drink.source); put("checkedDate", drink.checkedDate); put("volumeMl", drink.volumeMl ?: JSONObject.NULL); put("sugar", drink.sugar ?: JSONObject.NULL); put("kcal", drink.kcal ?: JSONObject.NULL); put("time", System.currentTimeMillis())
                             }
                             consumed = consumed + record
                             saveRecords(prefs, consumed)
