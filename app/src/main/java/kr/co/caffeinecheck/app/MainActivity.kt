@@ -58,7 +58,9 @@ fun CaffeineApp(context: Context) {
         (it.name.contains(query, true) || it.brand.contains(query, true)) &&
             (!zeroOnly || it.caffeine == 0)
     }
-    val todayRecords = consumed.filter { dateKey(it.optLong("time", 0L)) == dateKey(System.currentTimeMillis()) }\n    val todayTotal = todayRecords.filter { it.optBoolean("known", false) && it.optBoolean("verified", false) }.sumOf { it.optInt("caffeine", 0) }\n    val unknownToday = todayRecords.count { !it.optBoolean("known", false) || !it.optBoolean("verified", false) }
+    val todayRecords = consumed.filter { dateKey(it.optLong("time", 0L)) == dateKey(System.currentTimeMillis()) }
+    val todayTotal = todayRecords.filter { it.optBoolean("known", false) && it.optBoolean("verified", false) }.sumOf { it.optInt("caffeine", 0) }
+    val unknownToday = todayRecords.count { !it.optBoolean("known", false) || !it.optBoolean("verified", false) }
 
     MaterialTheme(colorScheme = darkColorScheme(primary = Teal, background = Pale, surface = Color(0xFF102B38), onSurface = Color(0xFFF1FAFA))) {
         Scaffold(
@@ -97,7 +99,7 @@ fun CaffeineApp(context: Context) {
                                     Spacer(Modifier.weight(1f))
                                     Text("참고선 200mg", color = Color(0xFF43D6C2), fontSize = 12.sp)
                                 }
-                                Text("임신 중 카페인 참고 기준이며 개인별 의료진 안내를 우선하세요. 확인 필요 $unknownToday건", color = Color(0xFFA5BEC5), fontSize = 11.sp)
+                                Text("임신 중 카페인 참고 기준이며 개인별 의료진 안내를 우선하세요. 확인 필요 ${unknownToday}건", color = Color(0xFFA5BEC5), fontSize = 11.sp)
                             }
                         }
                     }
@@ -123,6 +125,7 @@ fun CaffeineApp(context: Context) {
                                 put("brand", drink.brand)
                                 put("caffeine", drink.caffeine ?: 0)
                                 put("known", drink.caffeine != null)
+                                put("verified", false)
                                 put("time", System.currentTimeMillis())
                             }
                             consumed = consumed + record
@@ -183,7 +186,9 @@ private fun DrinkCard(drink: Drink, onAdd: () -> Unit) {
     }
 }
 
-private fun dateKey(time: Long): String = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.KOREA).format(java.util.Date(time))\n\nprivate fun loadRecords(prefs: android.content.SharedPreferences): List<JSONObject> {
+private fun dateKey(time: Long): String = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.KOREA).format(java.util.Date(time))
+
+private fun loadRecords(prefs: android.content.SharedPreferences): List<JSONObject> {
     val array = JSONArray(prefs.getString("records", "[]"))
     return (0 until array.length()).map { array.getJSONObject(it) }
 }
