@@ -14,3 +14,5 @@
 GitHub Actions의 **Build Android APK** 워크플로를 실행하면 Debug APK가 생성됩니다.
 
 > 현재 메뉴 목록은 초기 화면 확인용 샘플입니다. 공식 메뉴 전체 DB가 아니며, 미확인 값은 미확인으로 표시합니다.
+
+> Android SDK 설치는 GitHub-hosted runner에 사전 설치된 SDK를 확인하고 필요한 플랫폼 패키지를 설치하도록 구성했습니다.
