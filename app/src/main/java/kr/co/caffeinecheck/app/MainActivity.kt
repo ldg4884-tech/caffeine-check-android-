@@ -25,7 +25,11 @@ private val Teal = Color(0xFF43D6C2)
 private val Pale = Color(0xFF071923)
 private val Ink = Color(0xFFF1FAFA)
 
-data class Drink(val name: String, val brand: String, val kind: String, val caffeine: Int?, val sugar: Double?, val kcal: Int?)
+data class Drink(
+    val name: String, val brand: String, val kind: String,
+    val caffeine: Int?, val sugar: Double?, val kcal: Int?,
+    val volumeMl: Int? = null, val source: String, val checkedDate: String
+)
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,15 +42,23 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun CaffeineApp(context: Context) {
     val drinks = remember {
+        // 한국소비자원 2026-05-28 프랜차이즈 카페 차음료 품질비교 시험 결과
+        // 시험된 1잔 기준 카페인 함량만 등록. 시험되지 않은 영양값은 null로 유지.
+        val source = "한국소비자원 프랜차이즈 카페 차음료 품질비교"
+        val date = "2026-05-28"
         listOf(
-            Drink("아메리카노", "스타벅스", "HOT", 150, 0.0, 10),
-            Drink("아이스 아메리카노", "스타벅스", "ICE", 150, 0.0, 10),
-            Drink("카페 라떼", "스타벅스", "HOT", 75, 13.0, 180),
-            Drink("아이스 카페 라떼", "스타벅스", "ICE", 75, 8.0, 110),
-            Drink("플러피 판다 핫 초콜릿", "스타벅스", "HOT", 0, 48.0, 470),
-            Drink("하우스밀크 라떼", "메가MGC", "HOT", 118, 15.8, 329),
-            Drink("오르조라떼", "메가MGC", "HOT", 0, 21.7, 239),
-            Drink("리치루이보스티", "빽다방", "HOT", 0, null, null)
+            Drink("녹차라떼", "메가MGC커피", "말차·녹차 라떼", 45, 46.0, null, 410, source, date),
+            Drink("말차라떼", "빽다방", "말차·녹차 라떼", 93, null, null, 350, source, date),
+            Drink("제주 말차 라떼", "스타벅스", "말차·녹차 라떼", 81, 26.0, null, 285, source, date),
+            Drink("말차라떼", "이디야커피", "말차·녹차 라떼", 70, null, null, null, source, date),
+            Drink("그린티라떼", "컴포즈커피", "말차·녹차 라떼", 68, 50.0, null, 349, source, date),
+            Drink("그린티 라떼", "투썸플레이스", "말차·녹차 라떼", 65, null, null, null, source, date),
+            Drink("로얄밀크티라떼", "메가MGC커피", "밀크티", 57, null, null, 397, source, date),
+            Drink("밀크티", "빽다방", "밀크티", 113, 42.0, null, 359, source, date),
+            Drink("클래식 밀크 티", "스타벅스", "밀크티", 172, null, null, 311, source, date),
+            Drink("로열밀크티", "이디야커피", "밀크티", 73, null, null, null, source, date),
+            Drink("밀크티", "컴포즈커피", "밀크티", 88, null, null, null, source, date),
+            Drink("로얄 밀크티", "투썸플레이스", "밀크티", 148, 27.0, null, 276, source, date)
         )
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
@@ -144,7 +156,12 @@ fun CaffeineApp(context: Context) {
                                 put("brand", drink.brand)
                                 put("caffeine", drink.caffeine ?: 0)
                                 put("known", drink.caffeine != null)
-                                put("verified", false)
+                                put("verified", drink.caffeine != null)
+                                put("source", drink.source)
+                                put("checkedDate", drink.checkedDate)
+                                put("volumeMl", drink.volumeMl ?: JSONObject.NULL)
+                                put("sugar", drink.sugar ?: JSONObject.NULL)
+                                put("kcal", drink.kcal ?: JSONObject.NULL)
                                 put("time", System.currentTimeMillis())
                             }
                             consumed = consumed + record
@@ -155,7 +172,7 @@ fun CaffeineApp(context: Context) {
                         })
                     }
                     if (filtered.isEmpty()) item { Text("검색 결과가 없어요.", color = Color.Gray) }
-                    item { Text("※ 메뉴 수치는 테스트용 예시이며 공식 확인값이 아닙니다. 미확인 값은 합계에서 제외합니다.", color = Color(0xFF91AAB2), fontSize = 11.sp) }
+                    item { Text("※ 카페인 수치는 한국소비자원 2026년 시험 대상 제품의 1잔 기준입니다. 사이즈·제조 옵션에 따라 달라질 수 있습니다.", color = Color(0xFF91AAB2), fontSize = 11.sp) }
                 }
             } else if (selectedTab == 1) {
                 LazyColumn(
@@ -215,7 +232,8 @@ private fun DrinkCard(drink: Drink, isFavorite: Boolean, onAdd: () -> Unit, onFa
                 Column(Modifier.weight(1f)) {
                     Text(drink.brand, fontSize = 12.sp, color = Teal, fontWeight = FontWeight.Bold)
                     Text(drink.name, fontSize = 17.sp, color = Ink, fontWeight = FontWeight.Bold)
-                    Text(drink.kind, fontSize = 11.sp, color = Color.Gray)
+                    Text(drink.kind + " · " + (drink.volumeMl?.let { "${it}mL" } ?: "용량 미확인"), fontSize = 11.sp, color = Color.Gray)
+                    Text("출처: ${drink.source} · 확인일 ${drink.checkedDate}", fontSize = 10.sp, color = Color(0xFF91AAB2))
                 }
                 Column(horizontalAlignment = Alignment.End) {
                     Text(if (drink.caffeine == null) "미확인" else "${drink.caffeine} mg",
