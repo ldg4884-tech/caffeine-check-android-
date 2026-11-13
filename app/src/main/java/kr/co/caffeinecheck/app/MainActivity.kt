@@ -194,6 +194,19 @@ fun CaffeineApp(context: Context) {
             Drink("구망추 ICED EX", "이디야커피", "아이스티 · ICED · EX", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
             Drink("구아바 자스민 에이드 ICED L", "이디야커피", "에이드 · ICED · L", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
 
+            // 메가MGC커피 공식 메뉴 영양정보 · 2026 겨울시즌 및 상시 메뉴
+            Drink("나 혼자만 드랍 UP! 은랑 큐브 레몬에이드 ICED", "메가MGC커피", "에이드 · ICED", 0.0, 44.9, 194, 710, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("음, 괜찮은 휴식이군 블레이드 초코크림커피 ICED", "메가MGC커피", "커피 · ICED", 242.7, 43.0, 306, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("하우스밀크 라떼 ICED", "메가MGC커피", "라떼 · ICED", 118.0, 15.8, 329, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("ARIH 듀얼바이오틱 소다 레드 루비 ICED", "메가MGC커피", "에이드 · ICED", 0.0, 2.0, 20, 355, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("딸기라떼 ICED", "메가MGC커피", "라떼 · ICED", 0.0, 58.0, 315, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("밀크쉐이크 ICED", "메가MGC커피", "쉐이크 · ICED", 0.0, 62.4, 401, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("유자생강차 HOT", "메가MGC커피", "과일차 · HOT", 0.0, 88.7, 389, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("초코젤라또 말차라떼 ICED", "메가MGC커피", "말차 라떼 · ICED", 213.5, 52.3, 332, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("딥 초코 체리 프라페 ICED", "메가MGC커피", "프라페 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("쫀득 모찌 밀크티 ICED", "메가MGC커피", "밀크티 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("매실 모과차 HOT", "메가MGC커피", "과일차 · HOT", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+
             // 제3자 카페인 데이터베이스의 참고 수치. 공식 브랜드 공표값이 아니므로 일일 합산에서 제외.
             Drink("아메리카노 다크 HOT · 참고값", "텐퍼센트커피", "커피 · 다크 · HOT · 비공식 참고값", 160.52, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
             Drink("아메리카노 미디엄 HOT · 참고값", "텐퍼센트커피", "커피 · 미디엄 · HOT · 비공식 참고값", 169.62, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
