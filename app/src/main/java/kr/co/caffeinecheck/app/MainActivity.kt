@@ -29,7 +29,7 @@ private val Ink = Color(0xFFF1FAFA)
 
 data class Drink(
     val name: String, val brand: String, val kind: String,
-    val caffeine: Int?, val sugar: Double?, val kcal: Int?,
+    val caffeine: Double?, val sugar: Double?, val kcal: Int?,
     val volumeMl: Int? = null, val source: String, val checkedDate: String,
     val sourceUrl: String = "https://www.kca.go.kr/home/sub.do?menukey=4004&mode=view&no=1004472111"
 )
@@ -72,10 +72,10 @@ fun CaffeineApp(context: Context) {
 
             // 빽다방 공식 메뉴 페이지: 메뉴별 HOT/ICED와 컵 용량을 별도 음료로 등록
             Drink("블랙 벨벳 말차라떼 ICED", "빽다방", "말차·녹차 라떼 · ICED", 66, 51.4, 545, 660, paikSource, paikDate, paikUrl),
-            Drink("호지차라떼 HOT", "빽다방", "차 라떼 · HOT", 87.5.roundToInt(), 47.5, 435, 510, paikSource, paikDate, paikUrl),
-            Drink("호지차라떼 ICED", "빽다방", "차 라떼 · ICED", 68, 34.3, 305, 660, paikSource, paikDate, paikUrl),
-            Drink("우바홍차 HOT", "빽다방", "홍차 · HOT", 59, 0.0, 33, 510, paikSource, paikDate, paikUrl),
-            Drink("우바홍차 ICED", "빽다방", "홍차 · ICED", 53, 0.0, 2, 660, paikSource, paikDate, paikUrl),
+            Drink("호지차라떼 HOT", "빽다방", "차 라떼 · HOT", 87.5, 47.5, 435, 510, paikSource, paikDate, paikUrl),
+            Drink("호지차라떼 ICED", "빽다방", "차 라떼 · ICED", 68.2, 34.3, 305, 660, paikSource, paikDate, paikUrl),
+            Drink("우바홍차 HOT", "빽다방", "홍차 · HOT", 59.3, 0.0, 33, 510, paikSource, paikDate, paikUrl),
+            Drink("우바홍차 ICED", "빽다방", "홍차 · ICED", 53.2, 0.0, 2, 660, paikSource, paikDate, paikUrl),
             Drink("리치루이보스티 HOT", "빽다방", "허브티 · HOT", 0, 38.5, 180, 510, paikSource, paikDate, paikUrl),
             Drink("리치루이보스티 ICED", "빽다방", "허브티 · ICED", 0, 28.4, 140, 660, paikSource, paikDate, paikUrl),
 
@@ -109,12 +109,12 @@ fun CaffeineApp(context: Context) {
             (selectedBrand == "전체" || it.brand == selectedBrand) &&
             when (caffeineFilter) {
                 "100mg 이하" -> it.caffeine != null && it.caffeine <= 100
-                "저카페인" -> it.caffeine != null && it.caffeine in 1..100
+                "저카페인" -> it.caffeine != null && it.caffeine > 0.0 && it.caffeine <= 100.0
                 else -> true
             }
     }
     val todayRecords = consumed.filter { dateKey(it.optLong("time", 0L)) == dateKey(System.currentTimeMillis()) }
-    val todayTotal = todayRecords.filter { it.optBoolean("known", false) && it.optBoolean("verified", false) }.sumOf { it.optInt("caffeine", 0) }
+    val todayTotal = todayRecords.filter { it.optBoolean("known", false) && it.optBoolean("verified", false) }.sumOf { it.optDouble("caffeine", 0.0) }
     val unknownToday = todayRecords.count { !it.optBoolean("known", false) || !it.optBoolean("verified", false) }
 
     MaterialTheme(colorScheme = darkColorScheme(primary = Teal, background = Pale, surface = Color(0xFF102B38), onSurface = Color(0xFFF1FAFA))) {
@@ -150,7 +150,7 @@ fun CaffeineApp(context: Context) {
                             Column(Modifier.fillMaxWidth().padding(20.dp)) {
                                 Text("오늘 섭취한 카페인", color = Color(0xFFBBD0D5), fontSize = 13.sp)
                                 Row(verticalAlignment = Alignment.Bottom) {
-                                    Text("$todayTotal", color = Color.White, fontSize = 34.sp, fontWeight = FontWeight.Bold)
+                                    Text("${formatMg(todayTotal)}", color = Color.White, fontSize = 34.sp, fontWeight = FontWeight.Bold)
                                     Text(" mg", color = Color.White, modifier = Modifier.padding(bottom = 6.dp))
                                     Spacer(Modifier.weight(1f))
                                     Text("참고선 200mg", color = Color(0xFF43D6C2), fontSize = 12.sp)
@@ -217,14 +217,14 @@ fun CaffeineApp(context: Context) {
                     item {
                         Text("오늘 섭취 기록", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Ink)
                         Text("확인된 카페인 수치만 합산합니다.", color = Color.Gray, fontSize = 13.sp)
-                        Text("합계 $todayTotal mg", fontSize = 28.sp, color = Teal, fontWeight = FontWeight.Bold)
+                        Text("합계 ${formatMg(todayTotal)} mg", fontSize = 28.sp, color = Teal, fontWeight = FontWeight.Bold)
                     }
                     items(consumed.reversed()) { record ->
                         Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF102B38))) {
                             Row(Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
                                 Column(Modifier.weight(1f)) {
                                     Text(record.optString("brand") + " · " + record.optString("name"), fontWeight = FontWeight.SemiBold)
-                                    Text(if (record.optBoolean("known")) "${record.optInt("caffeine")} mg" else "카페인 정보 확인 필요", color = Color.Gray, fontSize = 12.sp)
+                                    Text(if (record.optBoolean("known")) "${formatMg(record.optDouble("caffeine"))} mg" else "카페인 정보 확인 필요", color = Color.Gray, fontSize = 12.sp)
                                 }
                                 TextButton(onClick = {
                                     consumed = consumed.filterNot { it == record }
@@ -278,7 +278,7 @@ private fun DrinkCard(drink: Drink, isFavorite: Boolean, onAdd: () -> Unit, onFa
                     ) { Text("출처 원문 보기 ↗", color = Teal, fontSize = 11.sp) }
                 }
                 Column(horizontalAlignment = Alignment.End) {
-                    Text(if (drink.caffeine == null) "미확인" else "${drink.caffeine} mg",
+                    Text(if (drink.caffeine == null) "미확인" else "${formatMg(drink.caffeine)} mg",
                         color = if (drink.caffeine == 0) Teal else Ink, fontWeight = FontWeight.Bold, fontSize = 18.sp)
                     TextButton(onClick = onFavorite) { Text(if (isFavorite) "★ 저장됨" else "☆ 저장", color = Teal) }
                 }
@@ -291,6 +291,8 @@ private fun DrinkCard(drink: Drink, isFavorite: Boolean, onAdd: () -> Unit, onFa
         }
     }
 }
+
+private fun formatMg(value: Double): String = if (value % 1.0 == 0.0) value.toInt().toString() else value.toString()
 
 private fun drinkKey(drink: Drink): String = "${drink.brand}|${drink.name}"
 
