@@ -32,7 +32,8 @@ data class Drink(
     val name: String, val brand: String, val kind: String,
     val caffeine: Double?, val sugar: Double?, val kcal: Int?,
     val volumeMl: Int? = null, val source: String, val checkedDate: String,
-    val sourceUrl: String = "https://www.kca.go.kr/home/sub.do?menukey=4004&mode=view&no=1004472111"
+    val sourceUrl: String = "https://www.kca.go.kr/home/sub.do?menukey=4004&mode=view&no=1004472111",
+    val verified: Boolean = true
 )
 
 class MainActivity : ComponentActivity() {
@@ -129,7 +130,22 @@ fun CaffeineApp(context: Context) {
             Drink("솔티드 밀크 카라멜", "텐퍼센트커피", "시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             Drink("더티땅콩라떼", "텐퍼센트커피", "시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             Drink("아인슈페너 HOT", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
-            Drink("아인슈페너 ICED", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus")
+            Drink("아인슈페너 ICED", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            // 제3자 카페인 데이터베이스의 참고 수치. 공식 브랜드 공표값이 아니므로 일일 합산에서 제외.
+            Drink("아메리카노 다크 HOT · 참고값", "텐퍼센트커피", "커피 · 다크 · HOT · 비공식 참고값", 160.52, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
+            Drink("아메리카노 미디엄 HOT · 참고값", "텐퍼센트커피", "커피 · 미디엄 · HOT · 비공식 참고값", 169.62, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
+            Drink("아메리카노 다크 ICED 16oz · 참고값", "텐퍼센트커피", "커피 · 다크 · ICED · 비공식 참고값", 157.14, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
+            Drink("아메리카노 미디엄 ICED 16oz · 참고값", "텐퍼센트커피", "커피 · 미디엄 · ICED · 비공식 참고값", 135.71, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
+            Drink("디카페인 아메리카노 HOT · 참고값", "텐퍼센트커피", "디카페인 커피 · HOT · 비공식 참고값", 6.44, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
+            Drink("디카페인 아메리카노 ICED 16oz · 참고값", "텐퍼센트커피", "디카페인 커피 · ICED · 비공식 참고값", 5.76, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
+            Drink("콜드브루라떼 HOT · 참고값", "텐퍼센트커피", "콜드브루 · HOT · 비공식 참고값", 174.9, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
+            Drink("콜드브루라떼 ICED 16oz · 참고값", "텐퍼센트커피", "콜드브루 · ICED · 비공식 참고값", 180.9, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
+            Drink("디카페인 콜드브루라떼 HOT · 참고값", "텐퍼센트커피", "디카페인 콜드브루 · HOT · 비공식 참고값", 9.33, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
+            Drink("디카페인 콜드브루라떼 ICED 16oz · 참고값", "텐퍼센트커피", "디카페인 콜드브루 · ICED · 비공식 참고값", 5.59, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
+            Drink("돌체 콜드브루라떼 HOT · 참고값", "텐퍼센트커피", "콜드브루 · HOT · 비공식 참고값", 138.58, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
+            Drink("돌체 콜드브루라떼 ICED 16oz · 참고값", "텐퍼센트커피", "콜드브루 · ICED · 비공식 참고값", 143.96, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
+            Drink("디카페인 돌체 콜드브루라떼 HOT · 참고값", "텐퍼센트커피", "디카페인 콜드브루 · HOT · 비공식 참고값", 7.45, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
+            Drink("디카페인 돌체 콜드브루라떼 ICED 16oz · 참고값", "텐퍼센트커피", "디카페인 콜드브루 · ICED · 비공식 참고값", 4.42, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false)
         )
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
@@ -236,7 +252,7 @@ fun CaffeineApp(context: Context) {
                                 put("brand", drink.brand)
                                 put("caffeine", drink.caffeine ?: 0)
                                 put("known", drink.caffeine != null)
-                                put("verified", drink.caffeine != null)
+                                put("verified", drink.caffeine != null && drink.verified)
                                 put("source", drink.source)
                                 put("checkedDate", drink.checkedDate)
                                 put("volumeMl", drink.volumeMl ?: JSONObject.NULL)
@@ -269,7 +285,7 @@ fun CaffeineApp(context: Context) {
                             Row(Modifier.fillMaxWidth().padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
                                 Column(Modifier.weight(1f)) {
                                     Text(record.optString("brand") + " · " + record.optString("name"), fontWeight = FontWeight.SemiBold)
-                                    Text(if (record.optBoolean("known")) "${formatMg(record.optDouble("caffeine"))} mg" else "카페인 정보 확인 필요", color = Color.Gray, fontSize = 12.sp)
+                                    Text(if (!record.optBoolean("known")) "카페인 정보 확인 필요" else if (record.optBoolean("verified")) "${formatMg(record.optDouble("caffeine"))} mg" else "${formatMg(record.optDouble("caffeine"))} mg · 참고값(합산 제외)", color = Color.Gray, fontSize = 12.sp)
                                 }
                                 TextButton(onClick = {
                                     consumed = consumed.filterNot { it == record }
@@ -288,7 +304,7 @@ fun CaffeineApp(context: Context) {
                             val record = JSONObject().apply {
                                 put("name", drink.name); put("brand", drink.brand)
                                 put("caffeine", drink.caffeine ?: 0); put("known", drink.caffeine != null)
-                                put("verified", drink.caffeine != null); put("source", drink.source); put("checkedDate", drink.checkedDate); put("volumeMl", drink.volumeMl ?: JSONObject.NULL); put("sugar", drink.sugar ?: JSONObject.NULL); put("kcal", drink.kcal ?: JSONObject.NULL); put("time", System.currentTimeMillis())
+                                put("verified", drink.caffeine != null && drink.verified); put("source", drink.source); put("checkedDate", drink.checkedDate); put("volumeMl", drink.volumeMl ?: JSONObject.NULL); put("sugar", drink.sugar ?: JSONObject.NULL); put("kcal", drink.kcal ?: JSONObject.NULL); put("time", System.currentTimeMillis())
                             }
                             consumed = consumed + record
                             saveRecords(prefs, consumed)
@@ -315,6 +331,7 @@ private fun DrinkCard(drink: Drink, isFavorite: Boolean, onAdd: () -> Unit, onFa
                     Text(drink.name, fontSize = 17.sp, color = Ink, fontWeight = FontWeight.Bold)
                     Text(drink.kind + " · " + (drink.volumeMl?.let { "${it}mL" } ?: "용량 미확인"), fontSize = 11.sp, color = Color.Gray)
                     Text("출처: ${drink.source} · 확인일 ${drink.checkedDate}", fontSize = 10.sp, color = Color(0xFF91AAB2))
+                    if (!drink.verified) Text("참고 수치 · 일일 섭취량 합산 제외", fontSize = 10.sp, color = Color(0xFFFFC56B))
                     TextButton(
                         onClick = {
                             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(drink.sourceUrl))
