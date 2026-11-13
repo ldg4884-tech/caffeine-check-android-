@@ -196,6 +196,7 @@ fun CaffeineApp(context: Context) {
     var query by remember { mutableStateOf("") }
     var caffeineFilter by remember { mutableStateOf("전체") }
     var selectedBrand by remember { mutableStateOf("전체") }
+    var selectedCategory by remember { mutableStateOf("전체") }
     var favorites by remember {
         mutableStateOf(
             prefs.getStringSet("favorites", emptySet())?.toSet()?.let { saved ->
@@ -209,9 +210,11 @@ fun CaffeineApp(context: Context) {
     var selectedTab by remember { mutableIntStateOf(0) }
     var consumed by remember { mutableStateOf(loadRecords(prefs)) }
     val brands = listOf("전체") + drinks.map { it.brand }.distinct()
+    val categories = listOf("전체") + drinks.map { it.kind.substringBefore(" · ") }.distinct().sorted()
     val filtered = drinks.filter {
         (it.name.contains(query, true) || it.brand.contains(query, true)) &&
             (selectedBrand == "전체" || it.brand == selectedBrand) &&
+            (selectedCategory == "전체" || it.kind.substringBefore(" · ") == selectedCategory) &&
             when (caffeineFilter) {
                 "카페인 0mg" -> it.caffeine == 0.0
                 "100mg 이하" -> it.caffeine != null && it.caffeine <= 100
@@ -282,6 +285,17 @@ fun CaffeineApp(context: Context) {
                         ) {
                             listOf("전체", "카페인 0mg", "100mg 이하", "저카페인").forEach { option ->
                                 FilterChip(selected = caffeineFilter == option, onClick = { caffeineFilter = option }, label = { Text(option) })
+                            }
+                        }
+                    }
+                    item {
+                        Text("음료 종류", color = Color(0xFFBBD0D5), fontSize = 12.sp)
+                        Row(
+                            modifier = Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            categories.forEach { category ->
+                                FilterChip(selected = selectedCategory == category, onClick = { selectedCategory = category }, label = { Text(category) })
                             }
                         }
                     }
