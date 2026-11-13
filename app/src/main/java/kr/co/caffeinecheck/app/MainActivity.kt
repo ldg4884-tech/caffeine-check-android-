@@ -207,6 +207,27 @@ fun CaffeineApp(context: Context) {
             Drink("쫀득 모찌 밀크티 ICED", "메가MGC커피", "밀크티 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
             Drink("매실 모과차 HOT", "메가MGC커피", "과일차 · HOT", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
 
+            // 스타벅스 코리아 공식 음료 영양정보 · Tall 기준(Trenta 표기 메뉴는 Trenta 기준)
+            // 2026-11-13 확인 · 메뉴별 공식 카페인 수치
+            Drink("나이트로 바닐라 크림", "스타벅스", "콜드브루 · Tall", 232.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("나이트로 콜드 브루", "스타벅스", "콜드브루 · Tall", 245.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("돌체 콜드 브루", "스타벅스", "콜드브루 · Tall", 130.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("리저브 나이트로", "스타벅스", "콜드브루 · Tall", 190.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("리저브 콜드 브루", "스타벅스", "콜드브루 · Tall", 190.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("막걸리향 크림 콜드 브루", "스타벅스", "콜드브루 · Tall", 53.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("민트 콜드 브루", "스타벅스", "콜드브루 · Tall", 415.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("바닐라 아인슈페너 콜드 브루", "스타벅스", "콜드브루 · Tall", 134.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("바닐라 크림 콜드 브루", "스타벅스", "콜드브루 · Tall", 135.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("베르가못 콜드 브루", "스타벅스", "콜드브루 · Tall", 130.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("블랙&화이트 콜드 브루", "스타벅스", "콜드브루 · Tall", 190.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("시그니처 더 블랙 콜드 브루", "스타벅스", "콜드브루 · Tall", 680.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("오트 콜드 브루", "스타벅스", "콜드브루 · Tall", 65.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("콜드 브루(Trenta)", "스타벅스", "콜드브루 · Trenta", 360.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("콜드 브루", "스타벅스", "콜드브루 · Tall", 155.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("콜드 브루 몰트", "스타벅스", "콜드브루 · Tall", 190.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("콜드 브루 플로트", "스타벅스", "콜드브루 · Tall", 190.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+            Drink("프렌치 바닐라 콜드 브루", "스타벅스", "콜드브루 · Tall", 65.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
+
             // 제3자 카페인 데이터베이스의 참고 수치. 공식 브랜드 공표값이 아니므로 일일 합산에서 제외.
             Drink("아메리카노 다크 HOT · 참고값", "텐퍼센트커피", "커피 · 다크 · HOT · 비공식 참고값", 160.52, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
             Drink("아메리카노 미디엄 HOT · 참고값", "텐퍼센트커피", "커피 · 미디엄 · HOT · 비공식 참고값", 169.62, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
