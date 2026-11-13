@@ -100,7 +100,17 @@ fun CaffeineApp(context: Context) {
             Drink("흑당 콜드브루 디카페인 L", "이디야커피", "디카페인 콜드브루 · L", 12.0, 45.0, 305, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html?chked_val=12%2C&skeyword="),
             Drink("흑당 콜드브루 디카페인 EX", "이디야커피", "디카페인 콜드브루 · EX", 18.0, 63.0, 424, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html?chked_val=12%2C&skeyword="),
             Drink("제로슈가 아샷추 복숭아 L", "이디야커피", "아이스티·에스프레소 · L", 129.0, 0.0, 43, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html?chked_val=14%2C"),
-            Drink("제로슈가 아샷추 복숭아 EX", "이디야커피", "아이스티·에스프레소 · EX", 143.0, 0.0, 60, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html?chked_val=14%2C")
+            Drink("제로슈가 아샷추 복숭아 EX", "이디야커피", "아이스티·에스프레소 · EX", 143.0, 0.0, 60, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html?chked_val=14%2C"),
+            // 투썸플레이스: 공식 메뉴 상세에서 확인한 카페인 수치
+            Drink("디카페인 민트 밀샷추 R", "투썸플레이스", "디카페인 밀크티 · R", 6.0, null, null, null, "투썸플레이스 공식 메뉴 상세", "2026-11-13", "https://dd-mo.twosome.co.kr/mn/menuInfoDetail.do?menuCd=10193562"),
+            Drink("디카페인 민트 밀샷추 L", "투썸플레이스", "디카페인 밀크티 · L", 10.0, null, null, null, "투썸플레이스 공식 메뉴 상세", "2026-11-13", "https://dd-mo.twosome.co.kr/mn/menuInfoDetail.do?menuCd=10193562"),
+
+            // 텐퍼센트커피: 판매 메뉴명은 확인했으나 공식 공개 카페인 수치는 확인되지 않아 미확인으로 등록
+            Drink("다크 아메리카노", "텐퍼센트커피", "커피", null, null, null, null, "카페인 수치 미확인 · 공식 브랜드 정보", "2026-11-13", "https://introduce.tenpercent.paycrux.co.kr/"),
+            Drink("디카페인 아메리카노", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 메뉴 판매 확인", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 카페라떼", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 메뉴 판매 확인", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 콜드브루", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 메뉴 판매 확인", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("텐라떼", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 공식 브랜드 정보", "2026-11-13", "https://introduce.tenpercent.paycrux.co.kr/")
         )
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
