@@ -89,12 +89,18 @@ fun CaffeineApp(context: Context) {
 
             // 이디야 공식 음료 페이지: 페이지에 표기된 L/EX 제공량별 카페인
             Drink("연유 콜드브루 (일반) L", "이디야커피", "콜드브루 · L", 181.0, 41.0, 313, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
-            Drink("연유 콜드브루 (일반) EX", "이디야커피", "콜드브루 · EX", null, 60.0, 449, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
+            Drink("연유 콜드브루 (일반) EX", "이디야커피", "콜드브루 · EX", null, null, null, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
             Drink("연유 콜드브루 (디카페인) L", "이디야커피", "디카페인 콜드브루 · L", 12.0, 41.0, 313, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
             Drink("연유 콜드브루 (디카페인) EX", "이디야커피", "디카페인 콜드브루 · EX", 18.0, 60.0, 449, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
             Drink("HOT 가나 시그니처 초콜릿 L", "이디야커피", "초콜릿 · HOT · L", 6.0, 41.0, 548, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
             Drink("HOT 가나 시그니처 초콜릿 EX", "이디야커피", "초콜릿 · HOT · EX", 9.0, 61.0, 800, 650, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
-            Drink("ICED 가나 시그니처 초콜릿 L", "이디야커피", "초콜릿 · ICED · L", 6.0, 38.0, 437, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html")
+            Drink("ICED 가나 시그니처 초콜릿 L", "이디야커피", "초콜릿 · ICED · L", 6.0, 38.0, 437, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
+            Drink("흑당 콜드브루 L", "이디야커피", "콜드브루 · L", 181.0, 45.0, 306, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html?chked_val=12%2C&skeyword="),
+            Drink("흑당 콜드브루 EX", "이디야커피", "콜드브루 · EX", 272.0, 63.0, 425, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html?chked_val=12%2C&skeyword="),
+            Drink("흑당 콜드브루 디카페인 L", "이디야커피", "디카페인 콜드브루 · L", 12.0, 45.0, 305, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html?chked_val=12%2C&skeyword="),
+            Drink("흑당 콜드브루 디카페인 EX", "이디야커피", "디카페인 콜드브루 · EX", 18.0, 63.0, 424, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html?chked_val=12%2C&skeyword="),
+            Drink("제로슈가 아샷추 복숭아 L", "이디야커피", "아이스티·에스프레소 · L", 129.0, 0.0, 43, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html?chked_val=14%2C"),
+            Drink("제로슈가 아샷추 복숭아 EX", "이디야커피", "아이스티·에스프레소 · EX", 143.0, 0.0, 60, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html?chked_val=14%2C")
         )
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
