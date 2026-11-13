@@ -228,6 +228,86 @@ fun CaffeineApp(context: Context) {
             Drink("콜드 브루 플로트", "스타벅스", "콜드브루 · Tall", 190.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
             Drink("프렌치 바닐라 콜드 브루", "스타벅스", "콜드브루 · Tall", 65.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
 
+            // 스타벅스 코리아 공식 영양정보 · 2026-11-13 확인 · Tall 기준
+            Drink("브루드 커피", "스타벅스", "커피 · HOT · Tall", 260.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("스위트 밀크 커피", "스타벅스", "커피 · HOT · Tall", 60.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 브루드 커피", "스타벅스", "커피 · ICED · Tall", 140.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("스타벅스 에어로카노", "스타벅스", "에스프레소 · Tall", 150.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("블랙 글레이즈드 라떼", "스타벅스", "라떼 · HOT · Tall", 75.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 블랙 글레이즈드 라떼", "스타벅스", "라떼 · ICED · Tall", 75.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 윈터 스카치 바닐라 라떼", "스타벅스", "라떼 · ICED · Tall", 100.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 토피 넛 라떼", "스타벅스", "라떼 · ICED · Tall", 75.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("윈터 스카치 바닐라 라떼", "스타벅스", "라떼 · HOT · Tall", 100.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("더블 에스프레소 칩 프라푸치노", "스타벅스", "프라푸치노 · Tall", 130.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("스타벅스 꿀 호떡 크림 프라푸치노", "스타벅스", "프라푸치노 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("에스프레소 프라푸치노", "스타벅스", "프라푸치노 · Tall", 120.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("자바 칩 프라푸치노", "스타벅스", "프라푸치노 · Tall", 100.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("카라멜 프라푸치노", "스타벅스", "프라푸치노 · Tall", 85.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("딸기 글레이즈드 크림 프라푸치노", "스타벅스", "프라푸치노 · Tall", 5.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("베르가못 딸기 크림 프라푸치노", "스타벅스", "프라푸치노 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("베르가못 제주 말차 크림 프라푸치노", "스타벅스", "프라푸치노 · Tall", 30.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("제주 까망 크림 프라푸치노", "스타벅스", "프라푸치노 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("제주 말차 크림 프라푸치노", "스타벅스", "프라푸치노 · Tall", 80.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("제주 쑥떡 크림 프라푸치노", "스타벅스", "프라푸치노 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("제주 오름 초당옥수수 프라푸치노", "스타벅스", "프라푸치노 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("초콜릿 크림 칩 프라푸치노", "스타벅스", "프라푸치노 · Tall", 10.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("피넛 쿠키 크림 프라푸치노", "스타벅스", "프라푸치노 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("화이트 타이거 프라푸치노", "스타벅스", "프라푸치노 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("망고 패션 프루트 블렌디드", "스타벅스", "블렌디드 · Tall", 10.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("북한산 레몬 얼 그레이 블렌디드", "스타벅스", "블렌디드 · Tall", 8.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("여수 바다 유자 블렌디드", "스타벅스", "블렌디드 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("제주 탄제린 블렌디드", "스타벅스", "블렌디드 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("딸기 딜라이트 요거트 블렌디드", "스타벅스", "블렌디드 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("말차 폭포 유자 블렌디드", "스타벅스", "블렌디드 · Tall", 65.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("망고 바나나 블렌디드", "스타벅스", "블렌디드 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("블루베리 딜라이트 요거트 블렌디드", "스타벅스", "블렌디드 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("자몽 허니 레몬 블렌디드", "스타벅스", "블렌디드 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("피치 망고 블렌디드", "스타벅스", "블렌디드 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("딸기 아사이 레모네이드 스타벅스 리프레셔", "스타벅스", "리프레셔 · Tall", 30.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("핑크 피치 리프레셔", "스타벅스", "리프레셔 · Tall", 30.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("골든 만다린 홉 피지오", "스타벅스", "피지오 · Tall", 16.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("라이트 핑크 자몽 피지오", "스타벅스", "피지오 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("리버 피치 피지오", "스타벅스", "피지오 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("서울 석양 오미자 피지오", "스타벅스", "피지오 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("여수 바다 자몽 피지오", "스타벅스", "피지오 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("쿨 라임 피지오", "스타벅스", "피지오 · Tall", 100.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("피치 딸기 피지오", "스타벅스", "피지오 · Tall", 30.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 클래식 뱅쇼 히비스커스 티", "스타벅스", "티 · ICED · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("클래식 뱅쇼 히비스커스 티", "스타벅스", "티 · HOT · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 퓨어 호지차", "스타벅스", "티 · ICED · Tall", 20.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("퓨어 호지차", "스타벅스", "티 · HOT · Tall", 25.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("살구 조이풀 메들리 티 라떼", "스타벅스", "티 라떼 · HOT · Tall", 80.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 살구 조이풀 메들리 티 라떼", "스타벅스", "티 라떼 · ICED · Tall", 50.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 차이 티 라떼", "스타벅스", "티 라떼 · ICED · Tall", 60.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 호지 글레이즈드 티 라떼", "스타벅스", "티 라떼 · ICED · Tall", 20.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("딸기 콜드폼 초콜릿", "스타벅스", "초콜릿 · Tall", 5.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("시그니처 핫 초콜릿", "스타벅스", "초콜릿 · HOT · Tall", 40.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 시그니처 초콜릿", "스타벅스", "초콜릿 · ICED · Tall", 20.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("플러피 판다 아이스 초콜릿", "스타벅스", "초콜릿 · ICED · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("플러피 판다 핫 초콜릿", "스타벅스", "초콜릿 · HOT · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("스타벅스 슬래머", "스타벅스", "기타 음료 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("스팀 우유", "스타벅스", "우유 · HOT · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("우유", "스타벅스", "우유 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
+
+// 매머드커피 공식 홈페이지 메뉴명 · 2026-11-13 확인 · 영양정보 미확인 값은 null
+            Drink("딸기 주스", "매머드커피", "주스 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("딸기 피치 우롱 밀크티", "매머드커피", "밀크티 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("딸기 리치 젤리티", "매머드커피", "과일티 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("딸기 리치티", "매머드커피", "과일티 · HOT", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("말차 클래식 라떼", "매머드커피", "말차 라떼", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("시그니처 라떼", "매머드커피", "라떼", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("골든 코코넛 라떼", "매머드커피", "라떼", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("로얄 밀크티", "매머드커피", "밀크티", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("매머드 커피", "매머드커피", "커피 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("스노우 매머드 커피", "매머드커피", "커피 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("허니베리 홍초 에이드", "매머드커피", "에이드", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("패션 오렌지 아이스티", "매머드커피", "아이스티", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("말차 클래식 프라페", "매머드커피", "프라페", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("말차 딸기 라떼", "매머드커피", "말차 라떼 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("말차 제주 레몬 크러쉬", "매머드커피", "크러쉬 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("말차 클라우드블루 코코넛워터", "매머드커피", "말차 음료 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+            Drink("말차 클라우드블루 코코넛라떼", "매머드커피", "말차 라떼 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+
             // 제3자 카페인 데이터베이스의 참고 수치. 공식 브랜드 공표값이 아니므로 일일 합산에서 제외.
             Drink("아메리카노 다크 HOT · 참고값", "텐퍼센트커피", "커피 · 다크 · HOT · 비공식 참고값", 160.52, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
             Drink("아메리카노 미디엄 HOT · 참고값", "텐퍼센트커피", "커피 · 미디엄 · HOT · 비공식 참고값", 169.62, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
@@ -248,6 +328,7 @@ fun CaffeineApp(context: Context) {
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
     var query by remember { mutableStateOf("") }
     var caffeineFilter by remember { mutableStateOf("전체") }
+    var dataFilter by remember { mutableStateOf("전체 데이터") }
     var selectedBrand by remember { mutableStateOf("전체") }
     var selectedCategory by remember { mutableStateOf("전체") }
     var favorites by remember {
@@ -264,10 +345,19 @@ fun CaffeineApp(context: Context) {
     var consumed by remember { mutableStateOf(loadRecords(prefs)) }
     val brands = listOf("전체") + drinks.map { it.brand }.distinct()
     val categories = listOf("전체") + drinks.map { it.kind.substringBefore(" · ") }.distinct().sorted()
+    val officialKnownCount = drinks.count { it.caffeine != null && it.verified }
+    val unknownCount = drinks.count { it.caffeine == null }
+    val referenceCount = drinks.count { it.caffeine != null && !it.verified }
     val filtered = drinks.filter {
         (it.name.contains(query, true) || it.brand.contains(query, true)) &&
             (selectedBrand == "전체" || it.brand == selectedBrand) &&
             (selectedCategory == "전체" || it.kind.substringBefore(" · ") == selectedCategory) &&
+            when (dataFilter) {
+                "공식 수치 확인" -> it.caffeine != null && it.verified
+                "카페인 미확인" -> it.caffeine == null
+                "참고값" -> it.caffeine != null && !it.verified
+                else -> true
+            } &&
             when (caffeineFilter) {
                 "카페인 0mg" -> it.caffeine == 0.0
                 "100mg 이하" -> it.caffeine != null && it.caffeine <= 100
@@ -322,6 +412,20 @@ fun CaffeineApp(context: Context) {
                         }
                     }
                     item {
+                        Card(shape = RoundedCornerShape(18.dp), colors = CardDefaults.cardColors(containerColor = Color(0xFF102B38))) {
+                            Column(Modifier.fillMaxWidth().padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                                Text("국내 카페 메뉴 데이터 현황", color = Ink, fontWeight = FontWeight.Bold)
+                                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                                    Column { Text("${drinks.size}", color = Teal, fontSize = 22.sp, fontWeight = FontWeight.Bold); Text("전체 메뉴", color = Color(0xFFBBD0D5), fontSize = 11.sp) }
+                                    Column { Text("$officialKnownCount", color = Teal, fontSize = 22.sp, fontWeight = FontWeight.Bold); Text("공식 수치 확인", color = Color(0xFFBBD0D5), fontSize = 11.sp) }
+                                    Column { Text("$unknownCount", color = Color(0xFFFFC56B), fontSize = 22.sp, fontWeight = FontWeight.Bold); Text("카페인 미확인", color = Color(0xFFBBD0D5), fontSize = 11.sp) }
+                                    Column { Text("$referenceCount", color = Color(0xFFFFC56B), fontSize = 22.sp, fontWeight = FontWeight.Bold); Text("참고값", color = Color(0xFFBBD0D5), fontSize = 11.sp) }
+                                }
+                                Text("공식 확인율 ${if (drinks.isEmpty()) 0 else officialKnownCount * 100 / drinks.size}% · 미확인 메뉴도 검색할 수 있어요.", color = Color(0xFFBBD0D5), fontSize = 11.sp)
+                            }
+                        }
+                    }
+                    item {
                         OutlinedTextField(
                             value = query, onValueChange = { query = it },
                             modifier = Modifier.fillMaxWidth(),
@@ -329,6 +433,14 @@ fun CaffeineApp(context: Context) {
                             singleLine = true,
                             shape = RoundedCornerShape(16.dp)
                         )
+                    }
+                    item {
+                        Text("데이터 상태", color = Color(0xFFBBD0D5), fontSize = 12.sp)
+                        Row(modifier = Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            listOf("전체 데이터", "공식 수치 확인", "카페인 미확인", "참고값").forEach { option ->
+                                FilterChip(selected = dataFilter == option, onClick = { dataFilter = option }, label = { Text(option) })
+                            }
+                        }
                     }
                     item {
                         Text("카페인 필터", color = Color(0xFFBBD0D5), fontSize = 12.sp)
