@@ -289,6 +289,15 @@ fun CaffeineApp(context: Context) {
             Drink("스팀 우유", "스타벅스", "우유 · HOT · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
             Drink("우유", "스타벅스", "우유 · Tall", 0.0, null, null, null, starbucksSource, starbucksDate, starbucksUrl),
 
+// 할리스 공식 메뉴 영양정보 · 제공량 기준은 메뉴 상세 페이지 표기 기준
+            Drink("아이스티", "할리스", "아이스티 · ICED", 11.0, null, null, null, "할리스 공식 메뉴 영양정보", "2026-11-13", "https://www.hollys.co.kr/menu/signature.do"),
+            Drink("민트초코 HOT", "할리스", "라떼 · HOT", 3.0, null, null, null, "할리스 공식 메뉴 영양정보", "2026-11-13", "https://www.hollys.co.kr/menu/signature.do"),
+            Drink("민트초코 ICED", "할리스", "라떼 · ICED", 3.0, null, null, null, "할리스 공식 메뉴 영양정보", "2026-11-13", "https://www.hollys.co.kr/menu/signature.do"),
+            Drink("핫초코", "할리스", "초콜릿 · HOT", 8.0, null, null, null, "할리스 공식 메뉴 영양정보", "2026-11-13", "https://www.hollys.co.kr/menu/signature.do"),
+            Drink("아이스초코", "할리스", "초콜릿 · ICED", 8.0, null, null, null, "할리스 공식 메뉴 영양정보", "2026-11-13", "https://www.hollys.co.kr/menu/signature.do"),
+            Drink("화이트초코 HOT", "할리스", "초콜릿 · HOT", 23.0, null, null, null, "할리스 공식 메뉴 영양정보", "2026-11-13", "https://www.hollys.co.kr/menu/signature.do"),
+            Drink("화이트초코 ICED", "할리스", "초콜릿 · ICED", 23.0, null, null, null, "할리스 공식 메뉴 영양정보", "2026-11-13", "https://www.hollys.co.kr/menu/signature.do"),
+
 // 매머드커피 공식 홈페이지 메뉴명 · 2026-11-13 확인 · 영양정보 미확인 값은 null
             Drink("딸기 주스", "매머드커피", "주스 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
             Drink("딸기 피치 우롱 밀크티", "매머드커피", "밀크티 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
@@ -307,6 +316,28 @@ fun CaffeineApp(context: Context) {
             Drink("말차 제주 레몬 크러쉬", "매머드커피", "크러쉬 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
             Drink("말차 클라우드블루 코코넛워터", "매머드커피", "말차 음료 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
             Drink("말차 클라우드블루 코코넛라떼", "매머드커피", "말차 라떼 · ICED", null, null, null, null, "매머드커피 공식 메뉴 · 영양정보 미확인", "2026-11-13", "https://mmthcoffee.com/"),
+
+// 메가MGC 공식 메뉴 및 컴포즈커피 매장 주문 메뉴명 · 카페인 미확인 값은 null 유지
+            Drink("무카페인 오르조라떼", "메가MGC커피", "라떼 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴 · 카페인 수치 미공개", "2026-11-13", "https://www.mega-mgccoffee.com/"),
+            Drink("저당 골든애플 블랙티", "메가MGC커피", "블랙티 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴 · 카페인 수치 미공개", "2026-11-13", "https://www.mega-mgccoffee.com/"),
+            Drink("망고폼 자스민 티플레저", "메가MGC커피", "티플레저 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/"),
+            Drink("M망고 G구아바 C캐럿 주스", "메가MGC커피", "주스 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/"),
+            Drink("제로 체리콜라", "메가MGC커피", "에이드 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/"),
+            Drink("플레인요거트 스무디", "컴포즈커피", "스무디", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("자몽에이드", "컴포즈커피", "에이드", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("레몬에이드", "컴포즈커피", "에이드", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("망고에이드", "컴포즈커피", "에이드", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("유자에이드", "컴포즈커피", "에이드", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("블루레몬에이드", "컴포즈커피", "에이드", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("청포도에이드", "컴포즈커피", "에이드", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("키위주스", "컴포즈커피", "주스", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("오렌지당근주스", "컴포즈커피", "주스", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("국내산 딸기주스", "컴포즈커피", "주스", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/120b0e36-2035-4a20-a6de-5e30562ea3cb/menus"),
+            Drink("망고스무디", "컴포즈커피", "스무디", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/290172d6-2c48-4c0c-bd12-ac838bffdbd8/menus"),
+            Drink("블루베리스무디", "컴포즈커피", "스무디", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/290172d6-2c48-4c0c-bd12-ac838bffdbd8/menus"),
+            Drink("딸기요거트스무디", "컴포즈커피", "스무디", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/290172d6-2c48-4c0c-bd12-ac838bffdbd8/menus"),
+            Drink("망고요거트스무디", "컴포즈커피", "스무디", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/290172d6-2c48-4c0c-bd12-ac838bffdbd8/menus"),
+            Drink("블루베리요거트스무디", "컴포즈커피", "스무디", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/290172d6-2c48-4c0c-bd12-ac838bffdbd8/menus"),
 
             // 제3자 카페인 데이터베이스의 참고 수치. 공식 브랜드 공표값이 아니므로 일일 합산에서 제외.
             Drink("아메리카노 다크 HOT · 참고값", "텐퍼센트커피", "커피 · 다크 · HOT · 비공식 참고값", 160.52, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
