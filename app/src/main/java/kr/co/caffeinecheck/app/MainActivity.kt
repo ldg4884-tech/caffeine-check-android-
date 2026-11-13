@@ -1,6 +1,8 @@
 package kr.co.caffeinecheck.app
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -28,7 +30,8 @@ private val Ink = Color(0xFFF1FAFA)
 data class Drink(
     val name: String, val brand: String, val kind: String,
     val caffeine: Int?, val sugar: Double?, val kcal: Int?,
-    val volumeMl: Int? = null, val source: String, val checkedDate: String
+    val volumeMl: Int? = null, val source: String, val checkedDate: String,
+    val sourceUrl: String = "https://www.kca.go.kr/home/sub.do?menukey=4004&mode=view&no=1004472111"
 )
 
 class MainActivity : ComponentActivity() {
@@ -46,6 +49,13 @@ fun CaffeineApp(context: Context) {
         // 시험된 1잔 기준 카페인 함량만 등록. 시험되지 않은 영양값은 null로 유지.
         val source = "한국소비자원 프랜차이즈 카페 차음료 품질비교"
         val date = "2026-05-28"
+        val kcaUrl = "https://www.kca.go.kr/home/sub.do?menukey=4004&mode=view&no=1004472111"
+        val paikSource = "빽다방 공식 메뉴 영양정보"
+        val paikDate = "2026-11-13"
+        val paikUrl = "https://paikdabang.com/menu/menu_drink/"
+        val starbucksSource = "스타벅스 코리아 공식 영양정보"
+        val starbucksDate = "2026-11-13"
+        val starbucksUrl = "https://www.starbucks.co.kr/menu/drink_list.do?CATE_CD=product_tea"
         listOf(
             Drink("녹차라떼", "메가MGC커피", "말차·녹차 라떼", 45, 46.0, null, 410, source, date),
             Drink("말차라떼", "빽다방", "말차·녹차 라떼", 93, null, null, 350, source, date),
@@ -58,7 +68,23 @@ fun CaffeineApp(context: Context) {
             Drink("클래식 밀크 티", "스타벅스", "밀크티", 172, null, null, 311, source, date),
             Drink("로열밀크티", "이디야커피", "밀크티", 73, null, null, null, source, date),
             Drink("밀크티", "컴포즈커피", "밀크티", 88, null, null, null, source, date),
-            Drink("로얄 밀크티", "투썸플레이스", "밀크티", 148, 27.0, null, 276, source, date)
+            Drink("로얄 밀크티", "투썸플레이스", "밀크티", 148, 27.0, null, 276, source, date, kcaUrl),
+
+            // 빽다방 공식 메뉴 페이지: 메뉴별 HOT/ICED와 컵 용량을 별도 음료로 등록
+            Drink("블랙 벨벳 말차라떼 ICED", "빽다방", "말차·녹차 라떼 · ICED", 66, 51.4, 545, 660, paikSource, paikDate, paikUrl),
+            Drink("호지차라떼 HOT", "빽다방", "차 라떼 · HOT", 87.5.roundToInt(), 47.5, 435, 510, paikSource, paikDate, paikUrl),
+            Drink("호지차라떼 ICED", "빽다방", "차 라떼 · ICED", 68, 34.3, 305, 660, paikSource, paikDate, paikUrl),
+            Drink("우바홍차 HOT", "빽다방", "홍차 · HOT", 59, 0.0, 33, 510, paikSource, paikDate, paikUrl),
+            Drink("우바홍차 ICED", "빽다방", "홍차 · ICED", 53, 0.0, 2, 660, paikSource, paikDate, paikUrl),
+            Drink("리치루이보스티 HOT", "빽다방", "허브티 · HOT", 0, 38.5, 180, 510, paikSource, paikDate, paikUrl),
+            Drink("리치루이보스티 ICED", "빽다방", "허브티 · ICED", 0, 28.4, 140, 660, paikSource, paikDate, paikUrl),
+
+            // 스타벅스 공식 영양정보: 해당 페이지의 기본 Tall 기준
+            Drink("아이스 퓨어 말차", "스타벅스", "말차 · ICED · Tall", 60, 0.0, 9, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("퓨어 말차", "스타벅스", "말차 · HOT · Tall", 75, 0.0, 11, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("말차 글레이즈드 티 라떼", "스타벅스", "말차 라떼 · HOT · Tall", 65, 29.0, 310, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 말차 글레이즈드 티 라떼", "스타벅스", "말차 라떼 · ICED · Tall", 60, 23.0, 235, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("클래식 밀크티 블렌디드", "스타벅스", "밀크티 블렌디드 · Tall", 60, 37.0, 315, null, starbucksSource, starbucksDate, starbucksUrl)
         )
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
@@ -212,7 +238,7 @@ fun CaffeineApp(context: Context) {
             } else {
                 LazyColumn(modifier = Modifier.fillMaxSize().padding(padding).padding(18.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     item { Text("즐겨찾기", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Ink) }
-                    items(drinks.filter { it.name in favorites }) { drink ->
+                    items(drinks.filter { drinkKey(it) in favorites }) { drink ->
                         DrinkCard(drink, true, {
                             val record = JSONObject().apply {
                                 put("name", drink.name); put("brand", drink.brand)
@@ -243,6 +269,13 @@ private fun DrinkCard(drink: Drink, isFavorite: Boolean, onAdd: () -> Unit, onFa
                     Text(drink.name, fontSize = 17.sp, color = Ink, fontWeight = FontWeight.Bold)
                     Text(drink.kind + " · " + (drink.volumeMl?.let { "${it}mL" } ?: "용량 미확인"), fontSize = 11.sp, color = Color.Gray)
                     Text("출처: ${drink.source} · 확인일 ${drink.checkedDate}", fontSize = 10.sp, color = Color(0xFF91AAB2))
+                    TextButton(
+                        onClick = {
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(drink.sourceUrl))
+                            context.startActivity(intent)
+                        },
+                        contentPadding = PaddingValues(0.dp)
+                    ) { Text("출처 원문 보기 ↗", color = Teal, fontSize = 11.sp) }
                 }
                 Column(horizontalAlignment = Alignment.End) {
                     Text(if (drink.caffeine == null) "미확인" else "${drink.caffeine} mg",
