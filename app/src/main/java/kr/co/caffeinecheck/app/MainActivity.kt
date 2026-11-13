@@ -73,10 +73,10 @@ fun CaffeineApp(context: Context) {
 
             // 빽다방 공식 메뉴 페이지: 메뉴별 HOT/ICED와 컵 용량을 별도 음료로 등록
             Drink("블랙 벨벳 말차라떼 ICED", "빽다방", "말차·녹차 라떼 · ICED", 66, 51.4, 545, 660, paikSource, paikDate, paikUrl),
-            Drink("호지차라떼 HOT", "빽다방", "차 라떼 · HOT", 87.5, 47.5, 435, 510, paikSource, paikDate, paikUrl),
+            Drink("호지차라떼 HOT", "빽다방", "차 라떼 · HOT", 87.5, 47.5, null, 510, paikSource, paikDate, paikUrl),
             Drink("호지차라떼 ICED", "빽다방", "차 라떼 · ICED", 68.2, 34.3, 305, 660, paikSource, paikDate, paikUrl),
-            Drink("우바홍차 HOT", "빽다방", "홍차 · HOT", 59.3, 0.0, 33, 510, paikSource, paikDate, paikUrl),
-            Drink("우바홍차 ICED", "빽다방", "홍차 · ICED", 53.2, 0.0, 2, 660, paikSource, paikDate, paikUrl),
+            Drink("우바홍차 HOT", "빽다방", "홍차 · HOT", 59.3, 0.0, null, 510, paikSource, paikDate, paikUrl),
+            Drink("우바홍차 ICED", "빽다방", "홍차 · ICED", 53.2, 0.0, null, 660, paikSource, paikDate, paikUrl),
             Drink("리치루이보스티 HOT", "빽다방", "허브티 · HOT", 0, 38.5, 180, 510, paikSource, paikDate, paikUrl),
             Drink("리치루이보스티 ICED", "빽다방", "허브티 · ICED", 0, 28.4, 140, 660, paikSource, paikDate, paikUrl),
 
@@ -281,7 +281,7 @@ private fun DrinkCard(drink: Drink, isFavorite: Boolean, onAdd: () -> Unit, onFa
                 }
                 Column(horizontalAlignment = Alignment.End) {
                     Text(if (drink.caffeine == null) "미확인" else "${formatMg(drink.caffeine)} mg",
-                        color = if (drink.caffeine == 0) Teal else Ink, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                        color = if (drink.caffeine == 0.0) Teal else Ink, fontWeight = FontWeight.Bold, fontSize = 18.sp)
                     TextButton(onClick = onFavorite) { Text(if (isFavorite) "★ 저장됨" else "☆ 저장", color = Teal) }
                 }
             }
