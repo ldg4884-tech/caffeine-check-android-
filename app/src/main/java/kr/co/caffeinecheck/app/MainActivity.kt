@@ -65,7 +65,16 @@ fun CaffeineApp(context: Context) {
     var query by remember { mutableStateOf("") }
     var caffeineFilter by remember { mutableStateOf("전체") }
     var selectedBrand by remember { mutableStateOf("전체") }
-    var favorites by remember { mutableStateOf(prefs.getStringSet("favorites", emptySet())?.toSet() ?: emptySet()) }
+    var favorites by remember {
+        mutableStateOf(
+            prefs.getStringSet("favorites", emptySet())?.toSet()?.let { saved ->
+                val migrated = drinks.filter { it.name in saved }.map { drinkKey(it) }.toSet()
+                val normalized = saved.filter { "|" in it }.toSet() + migrated
+                if (normalized != saved) prefs.edit().putStringSet("favorites", normalized).apply()
+                normalized
+            } ?: emptySet()
+        )
+    }
     var selectedTab by remember { mutableIntStateOf(0) }
     var consumed by remember { mutableStateOf(loadRecords(prefs)) }
     val brands = listOf("전체") + drinks.map { it.brand }.distinct()
@@ -150,7 +159,7 @@ fun CaffeineApp(context: Context) {
                         }
                     }
                     items(filtered) { drink ->
-                        DrinkCard(drink, drink.name in favorites, {
+                        DrinkCard(drink, drinkKey(drink) in favorites, {
                             val record = JSONObject().apply {
                                 put("name", drink.name)
                                 put("brand", drink.brand)
@@ -167,7 +176,7 @@ fun CaffeineApp(context: Context) {
                             consumed = consumed + record
                             saveRecords(prefs, consumed)
                         }, {
-                            favorites = if (drink.name in favorites) favorites - drink.name else favorites + drink.name
+                            favorites = if (drinkKey(drink) in favorites) favorites - drinkKey(drink) else favorites + drinkKey(drink)
                             prefs.edit().putStringSet("favorites", favorites).apply()
                         })
                     }
@@ -213,7 +222,7 @@ fun CaffeineApp(context: Context) {
                             consumed = consumed + record
                             saveRecords(prefs, consumed)
                         }, {
-                            favorites = favorites - drink.name
+                            favorites = favorites - drinkKey(drink)
                             prefs.edit().putStringSet("favorites", favorites).apply()
                         })
                     }
@@ -249,6 +258,8 @@ private fun DrinkCard(drink: Drink, isFavorite: Boolean, onAdd: () -> Unit, onFa
         }
     }
 }
+
+private fun drinkKey(drink: Drink): String = "${drink.brand}|${drink.name}"
 
 private fun dateKey(time: Long): String = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.KOREA).format(java.util.Date(time))
 
