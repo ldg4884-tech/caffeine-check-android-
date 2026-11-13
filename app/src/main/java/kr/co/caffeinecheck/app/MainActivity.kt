@@ -488,7 +488,21 @@ fun CaffeineApp(context: Context) {
             Drink("돌체 콜드브루라떼 HOT · 참고값", "텐퍼센트커피", "콜드브루 · HOT · 비공식 참고값", 138.58, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
             Drink("돌체 콜드브루라떼 ICED 16oz · 참고값", "텐퍼센트커피", "콜드브루 · ICED · 비공식 참고값", 143.96, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
             Drink("디카페인 돌체 콜드브루라떼 HOT · 참고값", "텐퍼센트커피", "디카페인 콜드브루 · HOT · 비공식 참고값", 7.45, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
-            Drink("디카페인 돌체 콜드브루라떼 ICED 16oz · 참고값", "텐퍼센트커피", "디카페인 콜드브루 · ICED · 비공식 참고값", 4.42, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false)
+            Drink("디카페인 돌체 콜드브루라떼 ICED 16oz · 참고값", "텐퍼센트커피", "디카페인 콜드브루 · ICED · 비공식 참고값", 4.42, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%BD%9C%EB%93%9C%EB%B8%8C%EB%A3%A8", false),
+            // 빽다방 공식 메뉴 페이지에서 추가 확인한 음료 (2026-11-13)
+            Drink("미숫가루 ICED", "빽다방", "곡물 음료 · ICED", 0.0, 25.26, 335, 660, paikSource, paikDate, paikUrl),
+            Drink("블랙 벨벳 말차라떼 HOT", "빽다방", "말차·녹차 라떼 · HOT", 90.0, 67.4, 758, 510, paikSource, paikDate, paikUrl),
+            Drink("레몬블랙티 HOT", "빽다방", "홍차 · HOT", 37.4, 56.5, 250, 510, paikSource, paikDate, paikUrl),
+            Drink("레몬블랙티 ICED", "빽다방", "홍차 · ICED", 41.9, 54.6, 243, 660, paikSource, paikDate, paikUrl),
+            Drink("사과유자티 HOT", "빽다방", "과일티 · HOT", 0.0, 45.4, 204, 510, paikSource, paikDate, paikUrl),
+            Drink("사과유자티 ICED", "빽다방", "과일티 · ICED", 0.0, 41.8, 216, 660, paikSource, paikDate, paikUrl),
+            Drink("포도주스 ICED", "빽다방", "주스 · ICED", 0.0, 61.4, 285, 660, paikSource, paikDate, paikUrl),
+            Drink("복숭아주스 ICED", "빽다방", "주스 · ICED", 0.0, 60.7, 280, 660, paikSource, paikDate, paikUrl),
+            Drink("골드 키위 주스 ICED", "빽다방", "주스 · ICED", 0.0, 50.4, 277, 660, paikSource, paikDate, paikUrl),
+            Drink("김천 자두 주스 ICED", "빽다방", "주스 · ICED", 0.0, 93.0, 426, 660, paikSource, paikDate, paikUrl),
+            Drink("사과젤리 리치스무디 ICED", "빽다방", "스무디 · ICED", 0.0, 60.8, 296, 660, paikSource, paikDate, paikUrl),
+            Drink("사과젤리 복숭아스무디 ICED", "빽다방", "스무디 · ICED", 0.0, 48.4, 248, 660, paikSource, paikDate, paikUrl),
+            Drink("피치우롱스위티 ICED", "빽다방", "우롱티 · ICED", 71.0, 32.0, 150, 660, paikSource, paikDate, paikUrl)
         )
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
