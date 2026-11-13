@@ -58,34 +58,43 @@ fun CaffeineApp(context: Context) {
         val starbucksDate = "2026-11-13"
         val starbucksUrl = "https://www.starbucks.co.kr/menu/drink_list.do?CATE_CD=product_tea"
         listOf(
-            Drink("녹차라떼", "메가MGC커피", "말차·녹차 라떼", 45, 46.0, null, 410, source, date),
-            Drink("말차라떼", "빽다방", "말차·녹차 라떼", 93, null, null, 350, source, date),
-            Drink("제주 말차 라떼", "스타벅스", "말차·녹차 라떼", 81, 26.0, null, 285, source, date),
-            Drink("말차라떼", "이디야커피", "말차·녹차 라떼", 70, null, null, null, source, date),
-            Drink("그린티라떼", "컴포즈커피", "말차·녹차 라떼", 68, 50.0, null, 349, source, date),
-            Drink("그린티 라떼", "투썸플레이스", "말차·녹차 라떼", 65, null, null, null, source, date),
-            Drink("로얄밀크티라떼", "메가MGC커피", "밀크티", 57, null, null, 397, source, date),
-            Drink("밀크티", "빽다방", "밀크티", 113, 42.0, null, 359, source, date),
-            Drink("클래식 밀크 티", "스타벅스", "밀크티", 172, null, null, 311, source, date),
-            Drink("로열밀크티", "이디야커피", "밀크티", 73, null, null, null, source, date),
-            Drink("밀크티", "컴포즈커피", "밀크티", 88, null, null, null, source, date),
-            Drink("로얄 밀크티", "투썸플레이스", "밀크티", 148, 27.0, null, 276, source, date, kcaUrl),
+            Drink("녹차라떼", "메가MGC커피", "말차·녹차 라떼", 45.0, 46.0, null, 410, source, date),
+            Drink("말차라떼", "빽다방", "말차·녹차 라떼", 93.0, null, null, 350, source, date),
+            Drink("제주 말차 라떼", "스타벅스", "말차·녹차 라떼", 81.0, 26.0, null, 285, source, date),
+            Drink("말차라떼", "이디야커피", "말차·녹차 라떼", 70.0, null, null, null, source, date),
+            Drink("그린티라떼", "컴포즈커피", "말차·녹차 라떼", 68.0, 50.0, null, 349, source, date),
+            Drink("그린티 라떼", "투썸플레이스", "말차·녹차 라떼", 65.0, null, null, null, source, date),
+            Drink("로얄밀크티라떼", "메가MGC커피", "밀크티", 57.0, null, null, 397, source, date),
+            Drink("밀크티", "빽다방", "밀크티", 113.0, 42.0, null, 359, source, date),
+            Drink("클래식 밀크 티", "스타벅스", "밀크티", 172.0, null, null, 311, source, date),
+            Drink("로열밀크티", "이디야커피", "밀크티", 73.0, null, null, null, source, date),
+            Drink("밀크티", "컴포즈커피", "밀크티", 88.0, null, null, null, source, date),
+            Drink("로얄 밀크티", "투썸플레이스", "밀크티", 148.0, 27.0, null, 276, source, date, kcaUrl),
 
             // 빽다방 공식 메뉴 페이지: 메뉴별 HOT/ICED와 컵 용량을 별도 음료로 등록
-            Drink("블랙 벨벳 말차라떼 ICED", "빽다방", "말차·녹차 라떼 · ICED", 66, 51.4, 545, 660, paikSource, paikDate, paikUrl),
+            Drink("블랙 벨벳 말차라떼 ICED", "빽다방", "말차·녹차 라떼 · ICED", 66.0, 51.4, 545, 660, paikSource, paikDate, paikUrl),
             Drink("호지차라떼 HOT", "빽다방", "차 라떼 · HOT", 87.5, 47.5, null, 510, paikSource, paikDate, paikUrl),
             Drink("호지차라떼 ICED", "빽다방", "차 라떼 · ICED", 68.2, 34.3, 305, 660, paikSource, paikDate, paikUrl),
             Drink("우바홍차 HOT", "빽다방", "홍차 · HOT", 59.3, 0.0, null, 510, paikSource, paikDate, paikUrl),
             Drink("우바홍차 ICED", "빽다방", "홍차 · ICED", 53.2, 0.0, null, 660, paikSource, paikDate, paikUrl),
-            Drink("리치루이보스티 HOT", "빽다방", "허브티 · HOT", 0, 38.5, 180, 510, paikSource, paikDate, paikUrl),
-            Drink("리치루이보스티 ICED", "빽다방", "허브티 · ICED", 0, 28.4, 140, 660, paikSource, paikDate, paikUrl),
+            Drink("리치루이보스티 HOT", "빽다방", "허브티 · HOT", 0.0, 38.5, 180, 510, paikSource, paikDate, paikUrl),
+            Drink("리치루이보스티 ICED", "빽다방", "허브티 · ICED", 0.0, 28.4, 140, 660, paikSource, paikDate, paikUrl),
 
             // 스타벅스 공식 영양정보: 해당 페이지의 기본 Tall 기준
-            Drink("아이스 퓨어 말차", "스타벅스", "말차 · ICED · Tall", 60, 0.0, 9, null, starbucksSource, starbucksDate, starbucksUrl),
-            Drink("퓨어 말차", "스타벅스", "말차 · HOT · Tall", 75, 0.0, 11, null, starbucksSource, starbucksDate, starbucksUrl),
-            Drink("말차 글레이즈드 티 라떼", "스타벅스", "말차 라떼 · HOT · Tall", 65, 29.0, 310, null, starbucksSource, starbucksDate, starbucksUrl),
-            Drink("아이스 말차 글레이즈드 티 라떼", "스타벅스", "말차 라떼 · ICED · Tall", 60, 23.0, 235, null, starbucksSource, starbucksDate, starbucksUrl),
-            Drink("클래식 밀크티 블렌디드", "스타벅스", "밀크티 블렌디드 · Tall", 60, 37.0, 315, null, starbucksSource, starbucksDate, starbucksUrl)
+            Drink("아이스 퓨어 말차", "스타벅스", "말차 · ICED · Tall", 60.0, 0.0, 9, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("퓨어 말차", "스타벅스", "말차 · HOT · Tall", 75.0, 0.0, 11, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("말차 글레이즈드 티 라떼", "스타벅스", "말차 라떼 · HOT · Tall", 65.0, 29.0, 310, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("아이스 말차 글레이즈드 티 라떼", "스타벅스", "말차 라떼 · ICED · Tall", 60.0, 23.0, 235, null, starbucksSource, starbucksDate, starbucksUrl),
+            Drink("클래식 밀크티 블렌디드", "스타벅스", "밀크티 블렌디드 · Tall", 60.0, 37.0, 315, null, starbucksSource, starbucksDate, starbucksUrl),
+
+            // 이디야 공식 음료 페이지: 페이지에 표기된 L/EX 제공량별 카페인
+            Drink("연유 콜드브루 (일반) L", "이디야커피", "콜드브루 · L", 181.0, 41.0, 313, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
+            Drink("연유 콜드브루 (일반) EX", "이디야커피", "콜드브루 · EX", null, 60.0, 449, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
+            Drink("연유 콜드브루 (디카페인) L", "이디야커피", "디카페인 콜드브루 · L", 12.0, 41.0, 313, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
+            Drink("연유 콜드브루 (디카페인) EX", "이디야커피", "디카페인 콜드브루 · EX", 18.0, 60.0, 449, 670, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
+            Drink("HOT 가나 시그니처 초콜릿 L", "이디야커피", "초콜릿 · HOT · L", 6.0, 41.0, 548, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
+            Drink("HOT 가나 시그니처 초콜릿 EX", "이디야커피", "초콜릿 · HOT · EX", 9.0, 61.0, 800, 650, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html"),
+            Drink("ICED 가나 시그니처 초콜릿 L", "이디야커피", "초콜릿 · ICED · L", 6.0, 38.0, 437, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://www.ediya.com/contents/drink.html")
         )
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
