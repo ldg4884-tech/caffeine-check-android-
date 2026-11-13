@@ -207,6 +207,33 @@ fun CaffeineApp(context: Context) {
             Drink("쫀득 모찌 밀크티 ICED", "메가MGC커피", "밀크티 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
             Drink("매실 모과차 HOT", "메가MGC커피", "과일차 · HOT", null, null, null, null, "메가MGC커피 공식 메뉴명 · 영양정보 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
 
+            // 메가MGC커피 공식 메뉴 추가 조사 · 공식 메뉴 페이지의 제공량/카페인 표기 기준
+            // 카페인 미표기·판독 불명 값은 null로 두고 임의 추정하지 않음
+            Drink("연유라떼 HOT", "메가MGC커피", "커피 라떼 · HOT", 194.2, 32.8, 322, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=2"),
+            Drink("카라멜마끼아또 HOT", "메가MGC커피", "커피 라떼 · HOT", 203.4, 26.1, 243, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=2"),
+            Drink("카페모카 ICED", "메가MGC커피", "커피 라떼 · ICED", 232.5, 33.9, 294, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=2"),
+            Drink("카푸치노 HOT", "메가MGC커피", "커피 라떼 · HOT", 192.3, 1.1, 132, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=2"),
+            Drink("골드망고스무디 ICED", "메가MGC커피", "스무디 · ICED", 0.0, 49.5, 218, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=3"),
+            Drink("할메가커피 ICED", "메가MGC커피", "커피 · ICED", 176.5, 28.7, 259, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=3"),
+            Drink("왕할메가커피 ICED", "메가MGC커피", "커피 · ICED", 279.5, 45.4, 410, 946, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=3"),
+            Drink("코코넛 커피 스무디 ICED", "메가MGC커피", "커피 스무디 · ICED", 236.0, 75.0, 700, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=3"),
+            Drink("딸기주스 ICED", "메가MGC커피", "주스 · ICED", 0.0, 47.3, 242, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=3"),
+            Drink("딸기바나나주스 ICED", "메가MGC커피", "주스 · ICED", 0.0, 46.9, 297, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=3"),
+            Drink("디카페인 에스프레소 HOT", "메가MGC커피", "디카페인 커피 · HOT", 3.9, 0.0, 7, 59, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=3"),
+            Drink("디카페인 아메리카노 HOT", "메가MGC커피", "디카페인 커피 · HOT", 7.8, 0.0, 15, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?page=3"),
+            Drink("왕메가카페라떼 ICED", "메가MGC커피", "커피 라떼 · ICED", 354.0, 20.0, 284, 946, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?list_checkbox_all=true&menu_category1=1&menu_category2=1&page=2"),
+            Drink("디카페인 왕메가카페라떼 ICED", "메가MGC커피", "디카페인 커피 라떼 · ICED", 0.0, null, 282, 946, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?list_checkbox_all=true&menu_category1=1&menu_category2=1&page=2"),
+            Drink("할메가미숫커피 ICED", "메가MGC커피", "곡물 커피 · ICED", 176.5, 47.4, 419, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?list_checkbox_all=true&menu_category1=1&menu_category2=1&page=2"),
+            Drink("라이트 바닐라 아몬드라떼 ICED", "메가MGC커피", "라떼 · ICED", 236.0, 5.4, 83, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?list_checkbox_all=true&menu_category1=1&menu_category2=1&page=2"),
+            Drink("디카페인 라이트 바닐라 아몬드라떼 ICED", "메가MGC커피", "디카페인 라떼 · ICED", 7.8, 5.4, 82, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?list_checkbox_all=true&menu_category1=1&menu_category2=1&page=2"),
+            Drink("왕메가사과유자 ICED", "메가MGC커피", "과일티 · ICED", 0.0, 76.7, 313, 946, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?list_checkbox_all=true&menu_category1=1&menu_category2=1&page=2"),
+            Drink("자몽차 HOT", "메가MGC커피", "과일차 · HOT", 0.0, 58.1, 294, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?category=2&menu_category1=1&menu_category2=1&page=2"),
+            Drink("허니자몽블랙티 HOT", "메가MGC커피", "홍차 · HOT", 61.5, 53.6, 302, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?category=2&menu_category1=1&menu_category2=1&page=2"),
+            // 공식 메뉴명은 확인됐으나 현재 확인 가능한 공식 카페인 수치가 없어 미확인으로 유지
+            Drink("쫀득 모찌 밀크티 ICED", "메가MGC커피", "밀크티 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 카페인 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("딥 초코 체리 프라페 ICED", "메가MGC커피", "프라페 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 카페인 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+            Drink("매실 모과차 HOT", "메가MGC커피", "과일차 · HOT", null, null, null, null, "메가MGC커피 공식 메뉴명 · 카페인 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
+
             // 스타벅스 코리아 공식 음료 영양정보 · Tall 기준(Trenta 표기 메뉴는 Trenta 기준)
             // 2026-11-13 확인 · 메뉴별 공식 카페인 수치
             Drink("나이트로 바닐라 크림", "스타벅스", "콜드브루 · Tall", 232.0, null, null, null, "스타벅스 코리아 공식 음료 영양정보", "2026-11-13", "https://www.starbucks.co.kr/menu/drink_list.do"),
