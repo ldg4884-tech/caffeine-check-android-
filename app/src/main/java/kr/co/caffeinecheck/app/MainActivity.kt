@@ -422,7 +422,7 @@ fun CaffeineApp(context: Context) {
             (selectedBrand == "전체" || it.brand == selectedBrand) &&
             (selectedCategory == "전체" || it.kind.substringBefore(" · ") == selectedCategory) &&
             when (dataFilter) {
-                "공식 수치 확인" -> it.caffeine != null && it.verified
+                "공식·공공기관 확인" -> it.caffeine != null && it.verified
                 "카페인 미확인" -> it.caffeine == null
                 "참고값" -> it.caffeine != null && !it.verified
                 else -> true
@@ -486,7 +486,7 @@ fun CaffeineApp(context: Context) {
                                 Text("국내 카페 메뉴 데이터 현황", color = Ink, fontWeight = FontWeight.Bold)
                                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                                     Column { Text("${drinks.size}", color = Teal, fontSize = 22.sp, fontWeight = FontWeight.Bold); Text("전체 메뉴", color = Color(0xFFBBD0D5), fontSize = 11.sp) }
-                                    Column { Text("$officialKnownCount", color = Teal, fontSize = 22.sp, fontWeight = FontWeight.Bold); Text("공식 수치 확인", color = Color(0xFFBBD0D5), fontSize = 11.sp) }
+                                    Column { Text("$officialKnownCount", color = Teal, fontSize = 22.sp, fontWeight = FontWeight.Bold); Text("공식·공공기관 확인", color = Color(0xFFBBD0D5), fontSize = 11.sp) }
                                     Column { Text("$unknownCount", color = Color(0xFFFFC56B), fontSize = 22.sp, fontWeight = FontWeight.Bold); Text("카페인 미확인", color = Color(0xFFBBD0D5), fontSize = 11.sp) }
                                     Column { Text("$referenceCount", color = Color(0xFFFFC56B), fontSize = 22.sp, fontWeight = FontWeight.Bold); Text("참고값", color = Color(0xFFBBD0D5), fontSize = 11.sp) }
                                 }
@@ -506,7 +506,7 @@ fun CaffeineApp(context: Context) {
                     item {
                         Text("데이터 상태", color = Color(0xFFBBD0D5), fontSize = 12.sp)
                         Row(modifier = Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            listOf("전체 데이터", "공식 수치 확인", "카페인 미확인", "참고값").forEach { option ->
+                            listOf("전체 데이터", "공식·공공기관 확인", "카페인 미확인", "참고값").forEach { option ->
                                 FilterChip(selected = dataFilter == option, onClick = { dataFilter = option }, label = { Text(option) })
                             }
                         }
