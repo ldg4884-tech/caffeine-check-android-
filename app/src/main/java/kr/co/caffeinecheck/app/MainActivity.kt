@@ -175,6 +175,25 @@ fun CaffeineApp(context: Context) {
             Drink("딸기주스 ICED", "빽다방", "주스 · ICED", 0.0, 42.31, 223, 660, paikSource, paikDate, paikUrl),
             Drink("망고주스 ICED", "빽다방", "주스 · ICED", 0.0, 37.0, 241, 660, paikSource, paikDate, paikUrl),
 
+            // 이디야 공식 음료 페이지의 최신 메뉴명 확인. 미공개 영양값은 null로 유지.
+            Drink("흑임자 크림 라떼 HOT L", "이디야커피", "라떼 · HOT · L", 0.0, 55.0, 501, 520, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("흑임자 크림 라떼 HOT EX", "이디야커피", "라떼 · HOT · EX", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("흑임자 크림 라떼 ICED L", "이디야커피", "라떼 · ICED · L", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("흑임자 크림 라떼 ICED EX", "이디야커피", "라떼 · ICED · EX", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("밤 크림 라떼 HOT L", "이디야커피", "라떼 · HOT · L", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("밤 크림 라떼 HOT EX", "이디야커피", "라떼 · HOT · EX", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("밤 크림 라떼 ICED L", "이디야커피", "라떼 · ICED · L", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("밤 크림 라떼 ICED EX", "이디야커피", "라떼 · ICED · EX", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("히비스커스 청귤티 HOT L", "이디야커피", "블렌딩티 · HOT · L", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("히비스커스 청귤티 HOT EX", "이디야커피", "블렌딩티 · HOT · EX", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("히비스커스 청귤티 ICED L", "이디야커피", "블렌딩티 · ICED · L", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("히비스커스 청귤티 ICED EX", "이디야커피", "블렌딩티 · ICED · EX", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("말차폼 자스민티 ICED L", "이디야커피", "블렌딩티 · ICED · L", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("말차폼 자스민티 ICED EX", "이디야커피", "블렌딩티 · ICED · EX", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("구망추 ICED L", "이디야커피", "아이스티 · ICED · L", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("구망추 ICED EX", "이디야커피", "아이스티 · ICED · EX", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+            Drink("구아바 자스민 에이드 ICED L", "이디야커피", "에이드 · ICED · L", null, null, null, null, "이디야커피 공식 음료 영양정보", "2026-11-13", "https://ediya.com/contents/drink.html"),
+
             // 제3자 카페인 데이터베이스의 참고 수치. 공식 브랜드 공표값이 아니므로 일일 합산에서 제외.
             Drink("아메리카노 다크 HOT · 참고값", "텐퍼센트커피", "커피 · 다크 · HOT · 비공식 참고값", 160.52, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
             Drink("아메리카노 미디엄 HOT · 참고값", "텐퍼센트커피", "커피 · 미디엄 · HOT · 비공식 참고값", 169.62, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
