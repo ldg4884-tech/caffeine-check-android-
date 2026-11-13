@@ -7,9 +7,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -170,6 +172,7 @@ fun CaffeineApp(context: Context) {
         (it.name.contains(query, true) || it.brand.contains(query, true)) &&
             (selectedBrand == "전체" || it.brand == selectedBrand) &&
             when (caffeineFilter) {
+                "카페인 0mg" -> it.caffeine == 0.0
                 "100mg 이하" -> it.caffeine != null && it.caffeine <= 100
                 "저카페인" -> it.caffeine != null && it.caffeine > 0.0 && it.caffeine <= 100.0
                 else -> true
@@ -232,15 +235,21 @@ fun CaffeineApp(context: Context) {
                     }
                     item {
                         Text("카페인 필터", color = Color(0xFFBBD0D5), fontSize = 12.sp)
-                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            listOf("전체", "100mg 이하").forEach { option ->
+                        Row(
+                            modifier = Modifier.horizontalScroll(rememberScrollState()),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            listOf("전체", "카페인 0mg", "100mg 이하", "저카페인").forEach { option ->
                                 FilterChip(selected = caffeineFilter == option, onClick = { caffeineFilter = option }, label = { Text(option) })
                             }
                         }
                     }
                     item {
                         Text("브랜드", color = Color(0xFFBBD0D5), fontSize = 12.sp)
-                        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
                             brands.forEach { brand ->
                                 FilterChip(selected = selectedBrand == brand, onClick = { selectedBrand = brand }, label = { Text(brand) })
                             }
