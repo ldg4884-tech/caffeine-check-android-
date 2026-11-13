@@ -110,6 +110,7 @@ fun CaffeineApp(context: Context) {
             Drink("아메리카노(다크)", "텐퍼센트커피", "커피 · 다크 원두", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             Drink("카페라떼", "텐퍼센트커피", "커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             Drink("텐라떼", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("텐라떼 10oz · 참고값", "텐퍼센트커피", "시그니처 커피 · 10oz · 비공식 참고값", 31.06, null, null, 296, "다이닝코드 이용자 게시 영양정보 · 공식 미확인", "2026-11-13", "https://www.diningcode.com/profile.php?rid=WPiNoqZZ2BIh", false),
             Drink("디카페인 아메리카노", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             Drink("디카페인 플랫화이트", "텐퍼센트커피", "디카페인 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             Drink("디카페인 카페라떼", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
