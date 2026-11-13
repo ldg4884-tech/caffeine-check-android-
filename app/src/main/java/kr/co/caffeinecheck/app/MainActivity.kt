@@ -105,12 +105,19 @@ fun CaffeineApp(context: Context) {
             Drink("디카페인 민트 밀샷추 R", "투썸플레이스", "디카페인 밀크티 · R", 6.0, null, null, null, "투썸플레이스 공식 메뉴 상세", "2026-11-13", "https://dd-mo.twosome.co.kr/mn/menuInfoDetail.do?menuCd=10193562"),
             Drink("디카페인 민트 밀샷추 L", "투썸플레이스", "디카페인 밀크티 · L", 10.0, null, null, null, "투썸플레이스 공식 메뉴 상세", "2026-11-13", "https://dd-mo.twosome.co.kr/mn/menuInfoDetail.do?menuCd=10193562"),
 
-            // 텐퍼센트커피: 판매 메뉴명은 확인했으나 공식 공개 카페인 수치는 확인되지 않아 미확인으로 등록
-            Drink("다크 아메리카노", "텐퍼센트커피", "커피", null, null, null, null, "카페인 수치 미확인 · 공식 브랜드 정보", "2026-11-13", "https://introduce.tenpercent.paycrux.co.kr/"),
-            Drink("디카페인 아메리카노", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 메뉴 판매 확인", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
-            Drink("디카페인 카페라떼", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 메뉴 판매 확인", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
-            Drink("디카페인 콜드브루", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 메뉴 판매 확인", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
-            Drink("텐라떼", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 공식 브랜드 정보", "2026-11-13", "https://introduce.tenpercent.paycrux.co.kr/")
+            // 텐퍼센트커피: 매장 메뉴판에서 판매 메뉴명을 확인. 공식 카페인 수치가 확인되지 않아 null로 유지
+            Drink("아메리카노(다크)", "텐퍼센트커피", "커피 · 다크 원두", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("카페라떼", "텐퍼센트커피", "커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("텐라떼", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 아메리카노", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 플랫화이트", "텐퍼센트커피", "디카페인 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 카페라떼", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 바닐라빈라떼", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 돌체라떼", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 밀크카라멜라떼", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 카페모카", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 시그니처라떼", "텐퍼센트커피", "디카페인 시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("디카페인 텐라떼", "텐퍼센트커피", "디카페인 시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus")
         )
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
