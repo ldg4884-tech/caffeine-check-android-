@@ -230,9 +230,6 @@ fun CaffeineApp(context: Context) {
             Drink("자몽차 HOT", "메가MGC커피", "과일차 · HOT", 0.0, 58.1, 294, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?category=2&menu_category1=1&menu_category2=1&page=2"),
             Drink("허니자몽블랙티 HOT", "메가MGC커피", "홍차 · HOT", 61.5, 53.6, 302, 591, "메가MGC커피 공식 메뉴 영양정보", "2026-11-13", "https://www.mega-mgccoffee.com/menu/menu.php?category=2&menu_category1=1&menu_category2=1&page=2"),
             // 공식 메뉴명은 확인됐으나 현재 확인 가능한 공식 카페인 수치가 없어 미확인으로 유지
-            Drink("쫀득 모찌 밀크티 ICED", "메가MGC커피", "밀크티 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 카페인 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
-            Drink("딥 초코 체리 프라페 ICED", "메가MGC커피", "프라페 · ICED", null, null, null, null, "메가MGC커피 공식 메뉴명 · 카페인 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
-            Drink("매실 모과차 HOT", "메가MGC커피", "과일차 · HOT", null, null, null, null, "메가MGC커피 공식 메뉴명 · 카페인 미확인", "2026-11-13", "https://www.mega-mgccoffee.com/menu/"),
 
             // 스타벅스 코리아 공식 음료 영양정보 · Tall 기준(Trenta 표기 메뉴는 Trenta 기준)
             // 2026-11-13 확인 · 메뉴별 공식 카페인 수치
