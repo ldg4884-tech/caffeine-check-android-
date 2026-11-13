@@ -35,3 +35,16 @@
 - 영양정보는 공식 페이지에 표시된 Regular 354ml 기준을 적용했고, 페이지에서 Grande 472ml로 별도 표시한 애사비·딸기 라떼는 472ml로 등록.
 - 공식 원문: https://www.hollys.co.kr/menu/signature.do
 - 확인 근거: 공식 페이지의 제품별 영양정보 표. 일부 메뉴는 스마트 매장 전용 또는 시즌 판매 메뉴일 수 있음.
+
+
+## 파스쿠찌 공식 메뉴 카탈로그 확장
+- 반영일: 2026-11-13
+- 공식 홈페이지의 시즌음료, 그라니따, 티, 기타음료 카테고리에서 확인되는 메뉴명 66개를 앱 카탈로그에 추가.
+- 이번 추가분은 공식 메뉴 목록에서 메뉴명과 일부 온도 구분만 확인한 항목이므로 카페인·당류·열량·용량은 임의 입력하지 않고 모두 null로 유지.
+- 따라서 이번 66개는 '메뉴 목록 등록'이며 '영양정보 검증 완료'를 의미하지 않음.
+- 공식 카테고리 페이지:
+  - 시즌음료: https://www.pascucci.co.kr/product/productList.asp?typeCode=00200010
+  - 그라니따: https://www.pascucci.co.kr/product/productList.asp?typeCode=00200020
+  - 티: https://www.pascucci.co.kr/product/productList.asp?typeCode=00200030
+  - 기타음료: https://www.pascucci.co.kr/product/productList.asp?typeCode=00200050
+- 주의: 매장별 판매 여부와 시즌 운영 기간은 다를 수 있으며, 앱의 등록 여부가 전국 매장 판매를 보장하지 않음.
