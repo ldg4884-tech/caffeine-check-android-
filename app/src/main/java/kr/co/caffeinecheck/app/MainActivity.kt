@@ -117,7 +117,19 @@ fun CaffeineApp(context: Context) {
             Drink("디카페인 밀크카라멜라떼", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             Drink("디카페인 카페모카", "텐퍼센트커피", "디카페인 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             Drink("디카페인 시그니처라떼", "텐퍼센트커피", "디카페인 시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
-            Drink("디카페인 텐라떼", "텐퍼센트커피", "디카페인 시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus")
+            Drink("디카페인 텐라떼", "텐퍼센트커피", "디카페인 시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("바닐라빈라떼", "텐퍼센트커피", "커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("돌체라떼", "텐퍼센트커피", "커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("밀크카라멜라떼", "텐퍼센트커피", "커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("카페모카", "텐퍼센트커피", "커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("콜드브루", "텐퍼센트커피", "콜드브루", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("콜드브루 라떼", "텐퍼센트커피", "콜드브루", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("돌체 콜드브루라떼", "텐퍼센트커피", "콜드브루", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("시그니처라떼", "텐퍼센트커피", "시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("솔티드 밀크 카라멜", "텐퍼센트커피", "시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("더티땅콩라떼", "텐퍼센트커피", "시그니처 커피 · ICED", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("아인슈페너 HOT", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
+            Drink("아인슈페너 ICED", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus")
         )
     }
     val prefs = remember { context.getSharedPreferences("caffeine_check", Context.MODE_PRIVATE) }
