@@ -135,7 +135,7 @@ fun CaffeineApp(context: Context) {
             Drink("아인슈페너 HOT", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             Drink("아인슈페너 ICED", "텐퍼센트커피", "시그니처 커피", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
             // 빽다방 공식 메뉴 영양정보에서 추가 확인한 음료. HOT/ICED·용량별 개별 등록.
-            Drink("꿀밤라떼 HOT", "빽다방", "기타 라떼 · HOT", 0.0, null, 484.6, 510, paikSource, paikDate, paikUrl),
+            Drink("꿀밤라떼 HOT", "빽다방", "기타 라떼 · HOT", 0.0, null, 485, 510, paikSource, paikDate, paikUrl),
             Drink("자몽블랙티 HOT", "빽다방", "홍차 · HOT", 47.1, null, 193, 510, paikSource, paikDate, paikUrl),
             Drink("제로슈거 자몽티 HOT", "빽다방", "과일티 · HOT", 0.0, 0.6, 124, 510, paikSource, paikDate, paikUrl),
             Drink("제로슈거 자몽티 ICED", "빽다방", "과일티 · ICED", 0.0, 0.4, 113, 660, paikSource, paikDate, paikUrl),
