@@ -59,7 +59,7 @@ fun CaffeineApp(context: Context) {
         val paikUrl = "https://paikdabang.com/menu/menu_drink/"
         val starbucksSource = "스타벅스 코리아 공식 영양정보"
         val starbucksDate = "2026-11-13"
-        val starbucksUrl = "https://www.starbucks.co.kr/menu/drink_list.do?CATE_CD=product_tea"
+        val starbucksUrl = "https://www.starbucks.co.kr/menu/drink_list.do"
         listOf(
             Drink("녹차라떼", "메가MGC커피", "말차·녹차 라떼", 45.0, 46.0, null, 410, source, date),
             Drink("말차라떼", "빽다방", "말차·녹차 라떼", 93.0, null, null, 350, source, date),
@@ -339,7 +339,45 @@ fun CaffeineApp(context: Context) {
             Drink("망고요거트스무디", "컴포즈커피", "스무디", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/290172d6-2c48-4c0c-bd12-ac838bffdbd8/menus"),
             Drink("블루베리요거트스무디", "컴포즈커피", "스무디", null, null, null, null, "컴포즈커피 매장 주문 메뉴 · 카페인 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/290172d6-2c48-4c0c-bd12-ac838bffdbd8/menus"),
 
-            // 제3자 카페인 데이터베이스의 참고 수치. 공식 브랜드 공표값이 아니므로 일일 합산에서 제외.
+            // 더벤티·파스쿠찌 매장 주문 메뉴명 · 제3자 주문 페이지 확인, 카페인 함량 미확인
+            Drink("(핫)하동매실티", "더벤티", "티 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/a089dc7b-6d33-472e-bf66-d25e13144aa5/menus"),
+            Drink("(아이스)하동매실티", "더벤티", "티 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/a089dc7b-6d33-472e-bf66-d25e13144aa5/menus"),
+            Drink("(핫)보성호지차라떼", "더벤티", "차 라떼 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/a089dc7b-6d33-472e-bf66-d25e13144aa5/menus"),
+            Drink("알찬 포도 에이드", "더벤티", "에이드", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/a089dc7b-6d33-472e-bf66-d25e13144aa5/menus"),
+            Drink("알찬 포도 요거트 스무디", "더벤티", "스무디", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/a089dc7b-6d33-472e-bf66-d25e13144aa5/menus"),
+            Drink("(핫)알찬 옥수수팝 라떼", "더벤티", "라떼 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/a089dc7b-6d33-472e-bf66-d25e13144aa5/menus"),
+            Drink("(아이스)알찬 옥수수팝 라떼", "더벤티", "라떼 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/a089dc7b-6d33-472e-bf66-d25e13144aa5/menus"),
+            Drink("쿠키앤크림프라페", "더벤티", "프라페", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/9a51c10b-44f1-4094-9db2-658f20411e40/menus"),
+            Drink("자바칩프라페", "더벤티", "프라페", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/9a51c10b-44f1-4094-9db2-658f20411e40/menus"),
+            Drink("코코넛커피프라페", "더벤티", "커피 프라페", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/9a51c10b-44f1-4094-9db2-658f20411e40/menus"),
+            Drink("솔티드카라멜프라페", "더벤티", "프라페", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/9a51c10b-44f1-4094-9db2-658f20411e40/menus"),
+            Drink("제로 복숭아 아이스티", "더벤티", "아이스티", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/9a51c10b-44f1-4094-9db2-658f20411e40/menus"),
+            Drink("제로 매실 아이스티", "더벤티", "아이스티", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/9a51c10b-44f1-4094-9db2-658f20411e40/menus"),
+            Drink("제로 오렌지 멜론 머틀티", "더벤티", "블렌딩티", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/9a51c10b-44f1-4094-9db2-658f20411e40/menus"),
+            Drink("복숭아아이스티", "더벤티", "아이스티", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/9a51c10b-44f1-4094-9db2-658f20411e40/menus"),
+            Drink("(핫)멜팅초코", "더벤티", "초콜릿 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/ecd63ea2-9fea-4d56-ae6d-e9fb91a98ce5/menus"),
+            Drink("(아이스)멜팅초코", "더벤티", "초콜릿 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/39e09565-b7e4-4812-9203-4f3cf872859f/menus"),
+            Drink("딸기라떼", "더벤티", "라떼 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/ecd63ea2-9fea-4d56-ae6d-e9fb91a98ce5/menus"),
+            Drink("딸기연유라떼", "더벤티", "라떼 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/ecd63ea2-9fea-4d56-ae6d-e9fb91a98ce5/menus"),
+            Drink("(아이스)미숫가루라떼", "더벤티", "곡물 라떼 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/ecd63ea2-9fea-4d56-ae6d-e9fb91a98ce5/menus"),
+            Drink("(핫)초코라떼", "더벤티", "초콜릿 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/39e09565-b7e4-4812-9203-4f3cf872859f/menus"),
+            Drink("(아이스)초코라떼", "더벤티", "초콜릿 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/39e09565-b7e4-4812-9203-4f3cf872859f/menus"),
+            Drink("HOT)얼그레이", "파스쿠찌", "홍차 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("HOT)오렌지 루이보스", "파스쿠찌", "루이보스 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("HOT)플로럴 캐모마일", "파스쿠찌", "허브티 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("HOT)민트크루", "파스쿠찌", "허브티 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("HOT)프루티 하동 녹차", "파스쿠찌", "녹차 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("HOT)오렌지홍차", "파스쿠찌", "홍차 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("ICED)얼그레이", "파스쿠찌", "홍차 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("ICED)오렌지 루이보스", "파스쿠찌", "루이보스 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("ICED)플로럴 캐모마일", "파스쿠찌", "허브티 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("ICED)민트크루", "파스쿠찌", "허브티 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("ICED)프루티 하동 녹차", "파스쿠찌", "녹차 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("ICED)오렌지홍차", "파스쿠찌", "홍차 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("HOT)딸기 히비스커스", "파스쿠찌", "허브티 · HOT", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+            Drink("ICED)딸기 히비스커스", "파스쿠찌", "허브티 · ICED", null, null, null, null, "매장 주문 메뉴명 확인 · 카페인 수치 미확인", "2026-11-13", "https://app.passorder.co.kr/normal/b2be113d-ed34-412e-9624-439a91d0d684/menus"),
+
+// 제3자 카페인 데이터베이스의 참고 수치. 공식 브랜드 공표값이 아니므로 일일 합산에서 제외.
             Drink("아메리카노 다크 HOT · 참고값", "텐퍼센트커피", "커피 · 다크 · HOT · 비공식 참고값", 160.52, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
             Drink("아메리카노 미디엄 HOT · 참고값", "텐퍼센트커피", "커피 · 미디엄 · HOT · 비공식 참고값", 169.62, null, null, null, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
             Drink("아메리카노 다크 ICED 16oz · 참고값", "텐퍼센트커피", "커피 · 다크 · ICED · 비공식 참고값", 157.14, null, null, 473, "카페인노트 제3자 데이터베이스 · 공식 미확인", "2026-11-13", "https://caffeinenote.com/drinks?q=%EC%95%84%EB%A9%94%EB%A6%AC%EC%B9%B4%EB%85%B8", false),
