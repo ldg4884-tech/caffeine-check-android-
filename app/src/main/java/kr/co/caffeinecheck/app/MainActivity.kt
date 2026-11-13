@@ -268,7 +268,7 @@ fun CaffeineApp(context: Context) {
                         })
                     }
                     if (filtered.isEmpty()) item { Text("검색 결과가 없어요.", color = Color.Gray) }
-                    item { Text("※ 카페인 수치는 카드별 공식 브랜드 영양정보 또는 한국소비자원 시험자료 기준입니다. 용량·온도·판매 시점에 따라 달라질 수 있으며, 미공개 값은 추정하지 않습니다.", color = Color(0xFF91AAB2), fontSize = 11.sp) }
+                    item { Text("※ 공식·공공기관 확인값과 제3자 참고값을 구분합니다. 제3자 참고값은 일일 합산에서 제외하며, 공식 미공개 값은 추정하지 않습니다.", color = Color(0xFF91AAB2), fontSize = 11.sp) }
                 }
             } else if (selectedTab == 1) {
                 LazyColumn(
