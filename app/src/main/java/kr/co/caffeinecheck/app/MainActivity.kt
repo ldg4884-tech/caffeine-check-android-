@@ -107,6 +107,16 @@ fun CaffeineApp(context: Context) {
             // 투썸플레이스: 공식 메뉴 상세에서 확인한 카페인 수치
             Drink("디카페인 민트 밀샷추 R", "투썸플레이스", "디카페인 밀크티 · R", 6.0, null, null, null, "투썸플레이스 공식 메뉴 상세", "2026-11-13", "https://dd-mo.twosome.co.kr/mn/menuInfoDetail.do?menuCd=10193562"),
             Drink("디카페인 민트 밀샷추 L", "투썸플레이스", "디카페인 밀크티 · L", 10.0, null, null, null, "투썸플레이스 공식 메뉴 상세", "2026-11-13", "https://dd-mo.twosome.co.kr/mn/menuInfoDetail.do?menuCd=10193562"),
+            // 투썸플레이스 공식 앱 메뉴 목록 및 2026년 가을 신메뉴 공지에서 메뉴명 확인. 영양 수치 미공개 항목은 null 유지.
+            Drink("흑임자 라떼", "투썸플레이스", "곡물 라떼", null, null, null, null, "투썸플레이스 공식 앱 메뉴 목록", "2026-11-13", "https://dd-mo.twosome.co.kr/main.do?storeChk=Y"),
+            Drink("율무 라떼", "투썸플레이스", "곡물 라떼", null, null, null, null, "투썸플레이스 공식 앱 메뉴 목록", "2026-11-13", "https://dd-mo.twosome.co.kr/main.do?storeChk=Y"),
+            Drink("쑥 라떼", "투썸플레이스", "곡물 라떼", null, null, null, null, "투썸플레이스 공식 앱 메뉴 목록", "2026-11-13", "https://dd-mo.twosome.co.kr/main.do?storeChk=Y"),
+            Drink("레몬 커피", "투썸플레이스", "커피", null, null, null, null, "투썸플레이스 공식 앱 메뉴 목록", "2026-11-13", "https://dd-mo.twosome.co.kr/main.do?storeChk=Y"),
+            Drink("레몬 카페 라떼", "투썸플레이스", "커피 라떼", null, null, null, null, "투썸플레이스 공식 앱 메뉴 목록", "2026-11-13", "https://dd-mo.twosome.co.kr/main.do?storeChk=Y"),
+            Drink("하프 카페인 콜드브루", "투썸플레이스", "콜드브루 · 하프 카페인", null, null, null, null, "투썸플레이스 공식 앱 메뉴 목록", "2026-11-13", "https://dd-mo.twosome.co.kr/main.do?storeChk=Y"),
+            Drink("하프 카페인 콜드브루 라떼", "투썸플레이스", "콜드브루 라떼 · 하프 카페인", null, null, null, null, "투썸플레이스 공식 메뉴 상세", "2026-11-13", "https://dd-mo.twosome.co.kr/mn/menuInfoDetail.do?menuCd=10193641"),
+            Drink("블랙 치즈폼 라떼", "투썸플레이스", "시즌 커피 라떼", null, null, null, null, "투썸플레이스 공식 신메뉴 보도자료", "2026-11-13", "https://www.twosome.co.kr"),
+            Drink("딸기 요거트 프라페", "투썸플레이스", "요거트 프라페", null, null, null, null, "투썸플레이스 공식 신메뉴 보도자료", "2026-11-13", "https://www.twosome.co.kr"),
 
             // 텐퍼센트커피: 매장 메뉴판에서 판매 메뉴명을 확인. 공식 카페인 수치가 확인되지 않아 null로 유지
             Drink("아메리카노(다크)", "텐퍼센트커피", "커피 · 다크 원두", null, null, null, null, "카페인 수치 미확인 · 매장 메뉴판", "2026-11-13", "https://app.passorder.co.kr/normal/d14e1ee5-9fc8-4d3f-969e-0a0109de6e79/menus"),
